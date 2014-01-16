@@ -1,0 +1,3 @@
+.NET - platform for applications from Microsoft
+CLR - managed execution environment for .NET
+namespace - hierarchical organization of classes
