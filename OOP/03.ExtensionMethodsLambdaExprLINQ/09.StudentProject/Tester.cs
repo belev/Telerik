@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _09.StudentProject
+namespace StudentProject
 {
     ////09.Create a class student with properties FirstName, LastName, FN, Tel, Email, Marks (a List<int>), GroupNumber.
     //Create a List<Student> with sample students. Select only the students that are from group number 2. Use LINQ query. Order the students by FirstName.
@@ -140,9 +140,9 @@ namespace _09.StudentProject
             };
 
             var result =
-                from g in groups
-                join s in students on g.DepartmentName equals s.Group.DepartmentName
-                select new { Dep = g.DepartmentName, Name = s.FirstName + " " + s.LastName };
+                from s in students
+                join g in groups on s.Group.DepartmentName equals g.DepartmentName
+                select new { Dep = s.Group.DepartmentName, Name = s.FirstName + " " + s.LastName };
 
             foreach (var item in result)
             {
