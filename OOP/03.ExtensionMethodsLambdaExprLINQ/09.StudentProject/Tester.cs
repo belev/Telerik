@@ -125,18 +125,40 @@ namespace _09.StudentProject
             {
                 Console.WriteLine("{0} - FN: {1} -> {2}", student.FullName, student.FN, student.Marks);
             }
+            Console.WriteLine();
         }
 
+        /// <summary>
+        /// 16*. Create a class Group with properties GroupNumber and DepartmentName.
+        /// Introduce a property Group in the Student class. Extract all students from "Mathematics" department. Use the Join operator.
+        /// </summary>
+        static void FindStudentsInMathematicsDepartment()
+        {
+            Group[] groups = new Group[]
+            {
+                new Group(15, "Mathematics")
+            };
+
+            var result =
+                from g in groups
+                join s in students on g.DepartmentName equals s.Group.DepartmentName
+                select new { Dep = g.DepartmentName, Name = s.FirstName + " " + s.LastName };
+
+            foreach (var item in result)
+            {
+                Console.WriteLine(item.Name + " -> " + item.Dep);
+            }
+        }
         static List<Student> students;
         static void Main()
         {
             students = new List<Student>()
             {
-                new Student("Grigor", "Petrov", "316106", "02876455", "grigor@abv.bg", new List<int> {3, 4}, 2),
-                new Student("Petar", "Marinov", "316206", "02899123", "petar@gmail.com", new List<int> {6, 5, 6, 6}, 2),
-                new Student("Dobri", "Gospodinov", "324806", "73654789", "dobri@abv.bg", new List<int> {6, 5, 6}, 4),
-                new Student("Anna", "Dimova", "395103", "52999999", "anna@gmail.com", new List<int> {6, 6}, 2),
-                new Student("Penka", "Stoicheva", "318206", "0899111111", "penka@abv.bg", new List<int>{2, 2, 3, 3}, 5)
+                new Student("Grigor", "Petrov", "316106", "02876455", "grigor@abv.bg", new List<int> {3, 4}, 2, new Group(15, "Physics")),
+                new Student("Petar", "Marinov", "316206", "02899123", "petar@gmail.com", new List<int> {6, 5, 6, 6}, 2, new Group(3, "Mathematics")),
+                new Student("Dobri", "Gospodinov", "324806", "73654789", "dobri@abv.bg", new List<int> {6, 5, 6}, 4, new Group(9, "Medicine")),
+                new Student("Anna", "Dimova", "395103", "52999999", "anna@gmail.com", new List<int> {6, 6}, 2, new Group(11, "Mathematics")),
+                new Student("Penka", "Stoicheva", "318206", "0899111111", "penka@abv.bg", new List<int>{2, 2, 3, 3}, 5, new Group(22, "Mathematics"))
 
             };
 
@@ -153,6 +175,8 @@ namespace _09.StudentProject
             FindStudentsWithExactlyTwoMarks();
 
             FindStudentMarksEnrolledIn2006();
+
+            FindStudentsInMathematicsDepartment();
         }
     }
 }

@@ -17,6 +17,8 @@ namespace _09.StudentProject
         private string email;
         private List<int> marks;
         private int groupNumber;
+        private Group group;
+
 
         public Student(string firstName, string lastName, string fn, string tel, string email, List<int> marks, int groupNumber)
         {
@@ -27,6 +29,12 @@ namespace _09.StudentProject
             this.Email = email;
             this.marks = marks;
             this.GroupNumber = groupNumber;
+        }
+
+        public Student(string firstName, string lastName, string fn, string tel, string email, List<int> marks, int groupNumber, Group group)
+            :this(firstName, lastName, fn, tel, email, marks, groupNumber)
+        {
+            this.group = group;
         }
 
         public string FirstName
@@ -93,6 +101,15 @@ namespace _09.StudentProject
                     throw new ArgumentOutOfRangeException("Group number can't be negative!");
                 }
                 this.groupNumber = value;
+            }
+        }
+
+        public Group Group 
+        {
+            get { return this.group; }
+            set
+            {
+                this.group = value;
             }
         }
 
