@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.ShapesProject", "01.ShapesProject\01.ShapesProject.csproj", "{834E9685-D54B-4EE2-BF79-6C7140D86336}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.BankSystemProject", "02.BankSystemProject\02.BankSystemProject.csproj", "{BCED3239-9EA4-4C7D-9DE9-F7A3F07D65D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.InvalidRangeException", "03.InvalidRangeException\03.InvalidRangeException.csproj", "{83CEE4FC-DD84-4DCE-B1E4-8A533E9E733E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{834E9685-D54B-4EE2-BF79-6C7140D86336}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{834E9685-D54B-4EE2-BF79-6C7140D86336}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{834E9685-D54B-4EE2-BF79-6C7140D86336}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{834E9685-D54B-4EE2-BF79-6C7140D86336}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCED3239-9EA4-4C7D-9DE9-F7A3F07D65D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCED3239-9EA4-4C7D-9DE9-F7A3F07D65D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCED3239-9EA4-4C7D-9DE9-F7A3F07D65D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCED3239-9EA4-4C7D-9DE9-F7A3F07D65D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83CEE4FC-DD84-4DCE-B1E4-8A533E9E733E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83CEE4FC-DD84-4DCE-B1E4-8A533E9E733E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83CEE4FC-DD84-4DCE-B1E4-8A533E9E733E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83CEE4FC-DD84-4DCE-B1E4-8A533E9E733E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
