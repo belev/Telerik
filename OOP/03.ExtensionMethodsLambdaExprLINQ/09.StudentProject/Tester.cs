@@ -10,6 +10,15 @@ namespace StudentProject
     //Create a List<Student> with sample students. Select only the students that are from group number 2. Use LINQ query. Order the students by FirstName.
     class Tester
     {
+        static void Print(IEnumerable<Student> students)
+        {
+            foreach (var student in students)
+            {
+                Console.WriteLine(student);
+                Console.WriteLine();
+            }
+        }
+
         /// <summary>
         /// 09.Select only the students that are from group number 2. Use LINQ query. Order the students by FirstName.
         /// </summary>
@@ -21,11 +30,7 @@ namespace StudentProject
                 orderby student.FirstName
                 select student;
 
-            foreach (var student in studentsFromSecondGroupWithLinq)
-            {
-                Console.WriteLine(student);
-                Console.WriteLine();
-            }
+            Print(studentsFromSecondGroupWithLinq);
         }
 
         /// <summary>
@@ -35,11 +40,7 @@ namespace StudentProject
         {
             var studentsFromSecondGroupWithLambda = students.Where(x => x.GroupNumber == 2).OrderBy(x => x.FirstName);
 
-            foreach (var student in studentsFromSecondGroupWithLambda)
-            {
-                Console.WriteLine(student);
-                Console.WriteLine();
-            }
+            Print(studentsFromSecondGroupWithLambda);
         }
 
         /// <summary>
@@ -52,11 +53,10 @@ namespace StudentProject
                 where student.Email.EndsWith("abv.bg")
                 select student;
 
-            foreach (var student in studentWithEmailInAbv)
-            {
-                Console.WriteLine(student);
-                Console.WriteLine();
-            }
+            // var studentsWithEmailInAbvLambda = students.Where(st => st.Email.EndsWith("abv.bg"));
+            // Print(studentsWithEmailInAbvLambda);
+
+            Print(studentWithEmailInAbv);
         }
 
         /// <summary>
@@ -69,11 +69,10 @@ namespace StudentProject
                 where student.Tel.StartsWith("02")
                 select student;
 
-            foreach (var student in studentsWithSofiaPhoneNumbers)
-            {
-                Console.WriteLine(student);
-                Console.WriteLine();
-            }
+            // studentsWithSofiaPhoneNumbersLambda = students.Where(st => st.Tel.StartsWith("02"));
+            // Print(studentsWithSofiaPhoneNumbersLambda);
+
+            Print(studentsWithSofiaPhoneNumbers);
         }
 
         /// <summary>
@@ -85,6 +84,8 @@ namespace StudentProject
                 from student in students
                 where student.ContainMark(6)
                 select new { FullName = student.FirstName + " " + student.LastName, Marks = student.GetMarks() };
+
+            // var studentsWithExcellentMarkLambda = students.Where(st => st.ContainMark(6));
 
             foreach (var student in studentsWithExcellentMark)
             {
@@ -100,12 +101,20 @@ namespace StudentProject
             const int markToFind = 2;
             const int markAppearences = 2;
 
-            var studentsWithExactlyTwoMarks =
+            var studentsWithExactlyTwoMarks2 =
                 from student in students
                 where student.Marks.Count(x => x == markToFind) == markAppearences
                 select new { FullName = student.FirstName + " " + student.LastName, Marks = student.GetMarks() };
 
-            foreach (var student in studentsWithExactlyTwoMarks)
+            //solution with lambda expressions
+            //var studentsWithExactlyTwoMarks2Lambda = students.Where(st => st.Marks.Count(m => m == markToFind) == markAppearences).Select(st => new { FullName = st.FirstName + " " + st.LastName, Marks = st.GetMarks() });
+
+            //foreach (var student in studentsWithExactlyTwoMarks2Lambda)
+            //{
+            //    Console.WriteLine("{0} -> {1}", student.FullName, student.Marks);
+            //}
+
+            foreach (var student in studentsWithExactlyTwoMarks2)
             {
                 Console.WriteLine("{0} -> {1}", student.FullName, student.Marks);
             }
@@ -123,6 +132,15 @@ namespace StudentProject
                 from student in students
                 where student.FN.Substring(4, 2) == "06"
                 select new { FullName = student.FirstName + " " + student.LastName, FN = student.FN, Marks = student.GetMarks() };
+
+            //solution with lambda expressions
+            //var studentsEnrolledIn2006Lambda = students.Where(st => st.FN.Substring(4, 2) == "06").Select(st => new { FullName = st.FirstName + " " + st.LastName, FN = st.FN, Marks = st.GetMarks() });
+
+            //foreach (var student in studentsEnrolledIn2006Lambda)
+            //{
+            //    Console.WriteLine("{0} - FN: {1} -> {2}", student.FullName, student.FN, student.Marks);
+            //}
+            //Console.WriteLine();
 
             foreach (var student in studentsEnrolledIn2006)
             {
