@@ -53,6 +53,7 @@ namespace StudentProject
                 where student.Email.EndsWith("abv.bg")
                 select student;
 
+            // solution with lambda expression
             // var studentsWithEmailInAbvLambda = students.Where(st => st.Email.EndsWith("abv.bg"));
             // Print(studentsWithEmailInAbvLambda);
 
@@ -85,7 +86,13 @@ namespace StudentProject
                 where student.ContainMark(6)
                 select new { FullName = student.FirstName + " " + student.LastName, Marks = student.GetMarks() };
 
-            // var studentsWithExcellentMarkLambda = students.Where(st => st.ContainMark(6));
+            //solution with lambda expression
+            //var studentsWithExcellentMarkLambda = students.Where(st => st.ContainMark(6)).Select(st => new { FullName = st.FirstName + " " + st.LastName, Marks = st.GetMarks() });
+
+            //foreach (var student in studentsWithExcellentMarkLambda)
+            //{
+            //    Console.WriteLine("{0} -> {1}", student.FullName, student.Marks);
+            //}
 
             foreach (var student in studentsWithExcellentMark)
             {
