@@ -136,12 +136,16 @@ namespace StudentProject
         {
             Group[] groups = new Group[]
             {
-                new Group(15, "Mathematics")
+                new Group(15, "Mathematics"),
+                new Group(11, "Medicine"),
+                new Group(3, "Physics"),
+                new Group(1, "Chemistry")
             };
 
             var result =
-                from s in students
-                join g in groups on s.Group.DepartmentName equals g.DepartmentName
+                from g in groups
+                join s in students on g.DepartmentName equals s.Group.DepartmentName
+                where g.DepartmentName == "Mathematics"
                 select new { Dep = s.Group.DepartmentName, Name = s.FirstName + " " + s.LastName };
 
             foreach (var item in result)
