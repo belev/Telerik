@@ -95,11 +95,14 @@ namespace StudentProject
         /// <summary>
         /// 14.Write down a similar program that extracts the students with exactly  two marks "2". Use extension methods.
         /// </summary>
-        static void FindStudentsWithExactlyTwoMarks()
+        static void FindStudentsWithExactlyTwoMarks2()
         {
+            const int markToFind = 2;
+            const int markAppearences = 2;
+
             var studentsWithExactlyTwoMarks =
                 from student in students
-                where student.MarksCount == 2
+                where student.Marks.Count(x => x == markToFind) == markAppearences
                 select new { FullName = student.FirstName + " " + student.LastName, Marks = student.GetMarks() };
 
             foreach (var student in studentsWithExactlyTwoMarks)
@@ -162,7 +165,8 @@ namespace StudentProject
                 new Student("Petar", "Marinov", "316206", "02899123", "petar@gmail.com", new List<int> {6, 5, 6, 6}, 2, new Group(3, "Mathematics")),
                 new Student("Dobri", "Gospodinov", "324806", "73654789", "dobri@abv.bg", new List<int> {6, 5, 6}, 4, new Group(9, "Medicine")),
                 new Student("Anna", "Dimova", "395103", "52999999", "anna@gmail.com", new List<int> {6, 6}, 2, new Group(11, "Mathematics")),
-                new Student("Penka", "Stoicheva", "318206", "0899111111", "penka@abv.bg", new List<int>{2, 2, 3, 3}, 5, new Group(22, "Mathematics"))
+                new Student("Penka", "Stoicheva", "318206", "0899111111", "penka@abv.bg", new List<int>{2, 2, 3, 3}, 5, new Group(22, "Mathematics")),
+                new Student("Anna", "Dimova", "395103", "52999999", "anna@gmail.com", new List<int> {2, 2, 3, 3, 4}, 1, new Group(11, "Chemistry"))
 
             };
 
@@ -176,7 +180,7 @@ namespace StudentProject
 
             FindStudentsWithAtLeastOneExcellentMark();
 
-            FindStudentsWithExactlyTwoMarks();
+            FindStudentsWithExactlyTwoMarks2();
 
             FindStudentMarksEnrolledIn2006();
 

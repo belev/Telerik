@@ -112,6 +112,10 @@ namespace StudentProject
                 this.group = value;
             }
         }
+        public List<int> Marks
+        {
+            get { return this.marks; }
+        }
 
         public int MarksCount
         {
