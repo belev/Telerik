@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title> Data Forms </title>
+</head>
+<body>
+    <form method="post" action="none">
+
+        <div>
+            <!--attribute for in the label and attribute id in the input
+            so that when click on the Member name: (or so on the other labels down)
+            we can directly write in the text field-->
+
+            <label for="member_input"> Member name: </label>
+            <input type="text" id="member_input" name="member_name" required="required" value="" />
+            <strong> req* </strong>
+        </div>
+
+        <div>
+            <label for="email_input"> Email: </label>
+            <input type="text" id="email_input" name="email_name" required="required" value="" />
+            <strong> req* </strong>
+        </div>
+
+        <div>
+            <label for="school_input"> School: </label>
+            <input type="text" id="school_input" name="school_name" required="required" value="" />
+            <strong> req* </strong>
+
+        </div>
+
+        <!--There is no place to store the submitted data, just the submit button
+        and that's why after click on submit button an error occured-->
+
+        <input type="image" src="SubmitButton.png" alt="Submit" width="40" height="40" />
+
+    </form>
+</body>
+</html>

@@ -1,0 +1,188 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title> Information Form </title>
+</head>
+
+<body>
+    <form method="post" action="test.txt">
+
+        <table border="1" cellpadding="3" cellspacing="0">
+
+            <tbody>
+
+                <tr>
+                    <td align="right">
+                        <label for="last_name"> <strong> Last Name </strong> </label>
+                    </td>
+
+                    <td colspan="3">
+                        <input type="text" id="last_name" name="lastName" value="Nakov" required="required" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="right">
+                        <label for="first_name"> <strong> First Name </strong> </label>
+                    </td>
+
+                    <td colspan="3">
+                        <input type="text" id="first_name" name="firstName" value="Svetlin" required="required" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="right">
+                        <label for="address"> <strong> Address </strong> </label>
+                    </td>
+
+                    <td colspan="3">
+                        <textarea id="address"> 17 Hristo Botev Str. floor 3, apt 12 </textarea>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="right">
+                        <label for="city"> <strong> City </strong> </label>
+                    </td>
+
+                    <td>
+                        <input type="text" id="city" name="city" value="Kaspichan" required="required" />
+                    </td>
+
+                    <td>
+                        <label>
+                            <label for="state"> <strong> State </strong> </label>
+                        </label>
+                    </td>
+
+                    <td>
+                        <input type="text" id="state" name="state" value="" />
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <td align="right">
+                        <label for="zip_postal_code"> <strong> Zip/Postal Code </strong> </label>
+                    </td>
+
+                    <td colspan="3">
+                        <input type="text" id="zip_postal_code" name="zip_code" value="9325" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="right">
+                        <label for="country"> <strong> Country </strong> </label>
+                    </td>
+
+                    <td colspan="3">
+                        <select id="country" name="country">
+                            <option selected="selected"> Bulgaria </option>
+                            <option value="Turkey"> Turkey </option>
+                            <option value="Greece"> Greece </option>
+                            <option> Sweden </option>
+                            <option> Germany </option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="right">
+                        <label for="phone_number">
+                            <strong> Phone (country code,<br> area code, number) </strong>
+                        </label>
+                    </td>
+
+                    <td colspan="3">
+                        <label> ( + </label>
+                        <input type="text" id="phone_number" size="5" name="country_code" value="359" />
+                        <label> ) </label>
+                        <input type="text" size="5" name="area_code" value="88" />
+                        <label> - </label>
+                        <input type="text" name="number" value="8334343" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label for="email"> <strong> E-mail </strong> </label>
+                    </td>
+
+                    <td colspan="3">
+                        <input type="text" id="email" name="email" value="nakov@kaspichan.org" required="required" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <strong> Birth Date </strong>
+                    </td>
+
+                    <td colspan="3">
+                        <label for="month"> Month </label>
+                        <input type="text" id="month" name="month" value="06" size="1" pattern="[0-9]{2}" />
+
+                        <label for="day"> Day </label>
+                        <input type="text" id="day" name="day" value="15" size="1" pattern="[0-9]{2}" />
+
+                        <label for="year"> Year (4 digit) </label>
+                        <input type="text" id="year" name="year" value="1980" pattern="[0-9]{4}" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label for="gender"> <strong> Gender </strong> </label>
+                    </td>
+
+                    <td colspan="3">
+                        <select id="gender">
+                            <option selected="selected"> Male </option>
+                            <option> Female </option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <b> Starting date </b>
+                    </td>
+
+                    <td colspan="3">
+                        <input checked type="radio" id="starting_date_spr" name="starting_date" value="Spring">
+                        <label for="starting_date_spr"> Spring 2006 </label>
+                        
+                        <input type="radio" id="starting_date_sum" name="starting_date" value="Summer">
+                        <label for="starting_date_sum"> Summer 2006 </label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label for="comments_questions"> <strong> Comments/Questions </strong> </label>
+                    </td>
+
+                    <td colspan="3">
+                        <textarea rows="6" id="comments_questions"> Please send me more information about the lodging. </textarea>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="4" align="center" bgcolor="#64E8DF">
+                        <fieldset>
+                            <input type="submit" name="submit_button" value="Submit" />
+                            <input type="reset" name="clear_button" value="Clear This Form" />
+                        </fieldset>
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </form>
+</body>
+</html>
