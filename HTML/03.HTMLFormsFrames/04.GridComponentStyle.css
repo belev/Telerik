@@ -1,0 +1,91 @@
+﻿body,
+table,
+tr,
+td,
+input,
+img,
+label,
+a,
+ul,
+li,
+p {
+  margin: 0;
+  padding: 0;
+}
+body {
+  padding: 50px;
+}
+body table {
+  border: 1px solid #D0D7E5;
+  border-radius: 10px;
+  border-spacing: 0;
+  text-align: left;
+}
+body table tr td,
+body table tr th {
+  border: 1px solid #D0D7E5;
+  padding: 3px;
+}
+body table tr:first-of-type {
+  border-left: none;
+}
+body table tr:last-of-type {
+  border-right: none;
+}
+body table thead,
+body table tfoot {
+  background-color: #DEE2E7;
+}
+body table thead tr th {
+  font-weight: normal;
+}
+body table thead input[type="text"] {
+  width: 40px;
+}
+body table thead input[type="text"]#product_name {
+  width: 120px;
+}
+body table thead input[type="text"]#quantity_per_unit {
+  width: 80px;
+}
+body table thead .caption {
+  padding-left: 5px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+body table tfoot li {
+  display: inline-block;
+  padding: 2px;
+}
+body table tfoot li a {
+  text-decoration: none;
+}
+body table tfoot li a:hover {
+  border: 1px solid #C95C05;
+  border-radius: 5px;
+  padding: 3px;
+}
+body table tfoot section label#page_size {
+  padding-left: 10px;
+}
+body table tfoot tr td {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+body table .float_left {
+  float: left;
+  padding-right: 5px;
+}
+body table .float_right {
+  float: right;
+}
+body table .image {
+  width: 15px;
+  height: 15px;
+}
+body table .icon {
+  width: 20px;
+  height: 20px;
+  position: fixed;
+}
+/*# sourceMappingURL=04.GridComponentStyle.css.map */

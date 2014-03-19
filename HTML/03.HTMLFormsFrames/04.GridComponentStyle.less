@@ -1,0 +1,113 @@
+﻿body, table, tr, td, input, img, label, a, ul, li, p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding: 50px;
+
+    table {
+        border: 1px solid #D0D7E5;
+        border-radius: 10px;
+        border-spacing: 0;
+        text-align: left;
+
+        tr {
+            td, th {
+                border: 1px solid #D0D7E5;
+                padding: 3px;
+            }
+
+            &:first-of-type {
+                border-left: none;
+            }
+
+            &:last-of-type {
+                border-right: none;
+            }
+        }
+
+        thead, tfoot {
+            background-color: #DEE2E7;
+        }
+
+        thead {
+
+            tr {
+                th {
+                    font-weight: normal;
+                }
+            }
+
+            input[type="text"] {
+                width: 40px;
+
+                &#product_name {
+                    width: 120px;
+                }
+
+                &#quantity_per_unit {
+                    width: 80px;
+                }
+            }
+
+            .caption {
+                padding-left: 5px;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+            }
+        }
+
+        tfoot {
+            li {
+                display: inline-block;
+                padding: 2px;
+
+                a {
+                    text-decoration: none;
+
+                    &:hover {
+                        border: 1px solid #C95C05;
+                        border-radius: 5px;
+                        padding: 3px;
+                    }
+                }
+            }
+
+            section {
+                label {
+                    &#page_size {
+                        padding-left: 10px;
+                    }
+                }
+            }
+
+            tr {
+                td {
+                    border-bottom-left-radius: 10px;
+                    border-bottom-right-radius: 10px;
+                }
+            }
+        }
+
+        .float_left {
+            float: left;
+            padding-right: 5px;
+        }
+
+        .float_right {
+            float: right;
+        }
+
+        .image {
+            width: 15px;
+            height: 15px;
+        }
+
+        .icon {
+            width: 20px;
+            height: 20px;
+            position: fixed;
+        }
+    }
+}

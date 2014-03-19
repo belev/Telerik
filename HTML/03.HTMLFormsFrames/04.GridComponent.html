@@ -1,0 +1,210 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title> Grid Component </title>
+    <link href="04.GridComponentStyle.css" rel="stylesheet" />
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th colspan="6" class="caption">
+                    Drag a column header and drop it here to group by that column
+                </th>
+            </tr>
+
+            <tr>
+                <th> Product ID </th>
+                <th> Product name </th>
+                <th> Unit price </th>
+                <th> Quantity per unit </th>
+                <th> Units in stock </th>
+                <th> Discontinued </th>
+            </tr>
+
+            <tr>
+                <th>
+                    <input type="text" id="product_id" />
+                </th>
+
+                <th>
+                    <input type="text" id="product_name" />
+                </th>
+
+                <th>
+                    <input type="text" id="unit_price" />
+                    <img class="icon" src="icon.png" alt="icon" />
+                </th>
+
+                <th>
+                    <input type="text" id="quantity_per_unit" />
+                </th>
+
+                <th>
+                    <input type="text" id="units_in_stock" />
+                    <img class="icon" src="icon.png" alt="icon" />
+                </th>
+
+                <th>
+                    <input type="checkbox" id="discontinued" />
+                    <img class="icon" src="icon.png" alt="icon" />
+                </th>
+            </tr>
+        </thead>
+
+        <tfoot>
+            <tr>
+                <td colspan="6">
+                    <ul class="float_left">
+                        <li><input class="image" type="image" src="dback.png" name="dback_button" /></li>
+                        <li><input class="image" type="image" src="back.png" name="back_button" /></li>
+
+                        <li> <a href=""> 1 </a> </li>
+                        <li> <a href=""> 2 </a> </li>
+                        <li> <a href=""> 3 </a> </li>
+                        <li> <a href=""> 4 </a> </li>
+                        <li> <a href=""> 5 </a> </li>
+                        <li> <a href=""> 6 </a> </li>
+                        <li> <a href=""> 7 </a> </li>
+                        <li> <a href=""> 8 </a> </li>
+                        <li> <a href=""> 9 </a> </li>
+                        <li> <a href=""> 10 </a> </li>
+
+                        <li><label> ... </label></li>
+
+                        <li><input class="image" type="image" src="dforward.png" name="dforward_button" /></li>
+                        <li><input class="image" type="image" src="forward.png" name="forward_button" /></li>
+                    </ul>
+
+                    <section>
+                        <label for="page_size" id="page_size">
+                            Page size:
+                            <select id="page_size">
+                                <option> 2 </option>
+                                <option> 4 </option>
+                                <option> 6 </option>
+                                <option> 8 </option>
+                                <option selected="selected"> 10 </option>
+                            </select>
+                        </label>
+
+                        <p class="float_right"> 335104 items in 33511 pages </p>
+                    </section>
+                </td>
+            </tr>
+        </tfoot>
+
+        <tbody>
+            <tr>
+                <td> <label> 1 </label> </td>
+                <td> <label> Chai </label> </td>
+                <td> <label> $18.00 </label> </td>
+                <td> <label> 10 boxes x 20 bags </label> </td>
+                <td> <label> 39 </label> </td>
+                <td>
+                    <input type="checkbox" disabled="disabled" />
+                </td>
+            </tr>
+
+            <tr>
+                <td> <label> 2 </label></td>
+                <td> <label> Chang </label> </td>
+                <td> <label> $19.00 </label> </td>
+                <td> <label> 24 - 12 oz bottles </label> </td>
+                <td> <label> 17 </label> </td>
+                <td>
+                    <input type="checkbox" disabled="disabled" />
+                </td>
+            </tr>
+
+            <tr>
+                <td> <label> 3 </label> </td>
+                <td> <label> Aniseed Syrup </label></td>
+                <td> <label> $10.00 </label> </td>
+                <td> <label> 12 - 550 ml bottles </label> </td>
+                <td> <label> 13 </label> </td>
+                <td>
+                    <input type="checkbox" disabled="disabled" />
+                </td>
+            </tr>
+
+            <tr>
+                <td> <label> 4 </label></td>
+                <td> <label> Chef Anton's Cajun Seasoning </label> </td>
+                <td> <label> $22.00 </label> </td>
+                <td> <label> 48 - 6 oz jars </label> </td>
+                <td> <label> 53  </label> </td>
+                <td>
+                    <input type="checkbox" disabled="disabled" />
+                </td>
+            </tr>
+
+            <tr>
+                <td> <label> 5 </label></td>
+                <td> <label> Chef Anton's Gumbo Mix </label> </td>
+                <td> <label> $21.35 </label> </td>
+                <td> <label> 36 boxes </label> </td>
+                <td> <label> 0 </label> </td>
+                <td>
+                    <input type="checkbox" checked="checked" disabled="disabled" />
+                </td>
+            </tr>
+
+            <tr>
+                <td> <label> 6 </label></td>
+                <td> <label> Grandma's Boysenberry Spread </label> </td>
+                <td> <label> $25.00 </label> </td>
+                <td> <label> 12 - 8 oz jars </label> </td>
+                <td> <label> 120  </label> </td>
+                <td>
+                    <input type="checkbox" disabled="disabled" />
+                </td>
+            </tr>
+
+            <tr>
+                <td> <label> 7 </label></td>
+                <td> <label> Uncle Bob's Organic Dried Pears </label> </td>
+                <td> <label> $30.00 </label> </td>
+                <td> <label> 12 - 1 lb pkgs. </label> </td>
+                <td> <label> 15  </label> </td>
+                <td>
+                    <input type="checkbox" disabled="disabled" />
+                </td>
+            </tr>
+
+            <tr>
+                <td> <label> 8 </label></td>
+                <td> <label> Northwoods Cranberry Sauce </label> </td>
+                <td> <label> $40.00 </label> </td>
+                <td> <label> 12 - 12 oz jars </label> </td>
+                <td> <label> 6  </label> </td>
+                <td>
+                    <input type="checkbox" disabled="disabled" />
+                </td>
+            </tr>
+
+            <tr>
+                <td> <label> 9 </label></td>
+                <td> <label> Mishi Kobe Niku </label> </td>
+                <td> <label> $97.00 </label> </td>
+                <td> <label> 18 - 500 g pkgs. </label> </td>
+                <td> <label> 29  </label> </td>
+                <td>
+                    <input type="checkbox" checked="checked" disabled="disabled" />
+                </td>
+            </tr>
+
+            <tr>
+                <td> <label> 10 </label></td>
+                <td> <label> Ikura </label> </td>
+                <td> <label> $31.00 </label> </td>
+                <td> <label> 12 - 200 ml jars </label> </td>
+                <td> <label> 31  </label> </td>
+                <td>
+                    <input type="checkbox" disabled="disabled" />
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
