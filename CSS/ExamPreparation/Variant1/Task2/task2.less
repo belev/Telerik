@@ -1,0 +1,114 @@
+﻿html, body, div, ul, li, a, table, thead, tbody, tr, td {
+    margin: 0;
+    padding: 0;
+}
+
+.linear-gradient(@from-color, @to-color) {
+    background-image: -webkit-gradient( linear, left top, left bottom, color-stop(0, @from-color), color-stop(1, @to-color) );
+    background-image: -o-linear-gradient(bottom, @from-color 0%, @to-color 100%);
+    background-image: -moz-linear-gradient(bottom, @from-color 0%, @to-color 100%);
+    background-image: -webkit-linear-gradient(bottom, @from-color 0%, @to-color 100%);
+    background-image: -ms-linear-gradient(bottom, @from-color 0%, @to-color 100%);
+    background-image: linear-gradient(to bottom, @from-color 0%, @to-color 100%);
+}
+
+div#wrapper {
+    width: 960px;
+    font-size: 16px;
+    font-family: Cambria, 'Times New Roman', 'Nimbus Roman No9 L', 'Freeserif', Times, serif;
+
+    ul.tab-strip {
+        width: 345px;
+        height: 240px;
+        border: 1px solid black;
+        border-radius: 5px;
+        list-style-type: none;
+        margin: 15px;
+        position: relative;
+
+        & > li {
+            display: inline-block;
+            padding: 5px 15px;
+            border-bottom: 1px solid black;
+            border-right: 1px solid black;
+            border-radius: 5px;
+            margin: 0.04em;
+            .linear-gradient(#EDEDED, #ABABAB);
+
+
+            a.tab-btn {
+                text-decoration: none;
+                color: black;
+                font-size: 1.4em;
+            }
+
+            .tab-content {
+                display: none;
+                position: absolute;
+                top: 35px;
+                left: 15px;
+                width: 330px;
+                height: 80%;
+                border-top: none;
+                padding: 5px;
+                padding-top: 15px;
+            }
+
+            &:last-of-type {
+                border-right: none;
+                margin: 0;
+            }
+
+            &:hover {
+                background: #EEEEEE;
+            }
+
+            &.current {
+                border-radius: 0;
+                border-bottom: none;
+                background: white;
+
+                .tab-btn {
+                    font-weight: bold;
+                }
+
+                .tab-content {
+                    display: block;
+
+                    ul {
+                        list-style-type: disc;
+
+                        li {
+                            ul {
+                                list-style-type: lower-latin;
+                                margin-left: 25px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        table {
+            border: 1px solid black;
+            border-collapse: collapse;
+            width: 93%;
+            background: #EEEEEE;
+
+            td, th {
+                border: 1px solid black;
+            }
+
+            th {
+                font-weight: bold;
+                text-align: center;
+                padding: 10px 15px;
+                .linear-gradient(#ABABAB, #EEEEEE);
+            }
+
+            td {
+                padding: 5px;
+            }
+        }
+    }
+}

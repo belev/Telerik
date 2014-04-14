@@ -1,0 +1,89 @@
+﻿html,
+body,
+div,
+nav,
+ul,
+li,
+a {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: black;
+  font-family: Arial, sans-serif;
+}
+body ul {
+  list-style-type: none;
+}
+body a {
+  text-decoration: none;
+}
+body div.main-container {
+  width: 688px;
+  min-height: 365px;
+  margin: 100px auto 0 auto;
+  background: #1e3741;
+  border: 1px solid #337d8f;
+  border-radius: 8px;
+  padding-bottom: 10px;
+}
+body div.main-container nav {
+  width: 100%;
+  height: 34px;
+  margin: 10px 0;
+}
+body div.main-container nav ul li a {
+  padding: 0 13px;
+  line-height: 34px;
+  background: #4b5f67;
+  font-size: 13px;
+  font-weight: bold;
+  color: #7b9ead;
+  float: left;
+  margin-right: 1px;
+}
+body div.main-container nav ul li a:hover {
+  text-decoration: underline;
+}
+body div.main-container nav ul li:first-child a {
+  background: #1e3741;
+  color: white;
+}
+body div.main-container .news-menu {
+  margin-bottom: 10px;
+  float: left;
+  height: auto;
+}
+body div.main-container .news-menu ul li {
+  width: 264px;
+  padding: 12px 10px;
+  border: 1px solid #334952;
+  border-right: none;
+  border-left: none;
+}
+body div.main-container .news-menu ul li a {
+  font-size: 13px;
+  color: #8ba39b;
+  font-weight: bold;
+}
+body div.main-container .news-menu ul li:hover,
+body div.main-container .news-menu ul li:first-child {
+  border: 1px solid #14585b;
+  border-right: none;
+  border-left: none;
+  background: #00968c;
+}
+body div.main-container .news-menu ul li:hover a,
+body div.main-container .news-menu ul li:first-child a {
+  color: white;
+}
+body div.main-container .news-menu ul li:last-child {
+  border-bottom: none;
+}
+body div.main-container .video {
+  width: 385px;
+  height: 282px;
+  background: url("cover.jpg");
+  float: left;
+}
+/*# sourceMappingURL=06.BtvHomePageStyle.css.map */

@@ -1,0 +1,91 @@
+﻿html, body, div, form, legend, fieldset, label, input, button {
+    margin: 0;
+    padding: 0;
+}
+
+.linear-gradient(@from-color, @from-pos, @to-color, @to-pos) {
+    background-image: -webkit-gradient( linear, left top, left bottom, color-stop(0, @from-color), color-stop(1, @to-color) );
+    background-image: -o-linear-gradient(bottom, @from-color @from-pos, @to-color @to-pos);
+    background-image: -moz-linear-gradient(bottom, @from-color @from-pos, @to-color @to-pos);
+    background-image: -webkit-linear-gradient(bottom, @from-color @from-pos, @to-color @to-pos);
+    background-image: -ms-linear-gradient(bottom, @from-color @from-pos, @to-color @to-pos);
+    background-image: linear-gradient(to bottom, @from-color @from-pos, @to-color @to-pos);
+}
+
+body {
+    @default-font-size: 16px;
+    @default-font-family: Verdana, Geneva, 'DejaVu Sans', sans-serif;
+
+    font-size: @default-font-size;
+    font-family: @default-font-family;
+    color: #333333;
+
+    div#wrapper {
+        width: 960px;
+        font-family: @default-font-family;
+
+        form {
+            padding: 20px 15px 15px 15px;
+            width: 380px;
+            .linear-gradient(#68D1FF, 0%, #8CFFFB, 100%);
+            margin-left: 25px;
+            margin-top: 25px;
+            border: 1px solid #333333;
+            border-radius: 15px;
+            text-align: right;
+
+            fieldset {
+                border: 3px solid #333333;
+                border-radius: 5px;
+                text-align: right;
+                padding-right: 15px;
+                padding-bottom: 5px;
+
+                legend {
+                    padding: 0 15px;
+                    margin-bottom: 5px;
+                    font-size: 1.3em;
+                    font-style: italic;
+                    font-family: @default-font-family;
+                }
+
+                input[type=text], input[type=password], input[type=number] {
+                    border: 1px solid #008FCE;
+                    border-radius: 5px;
+                    .linear-gradient(#69D2FF, 0%, #8BFEFB, 100%);
+                    padding: 5px 0 5px 15px;
+                    margin-bottom: 1px;
+                    color: #333333;
+                    width: 165px;
+                    font-size: 0.8em;
+                }
+
+                input[type=number] {
+                    width: 35px;
+                    padding-left: 5px;
+                }
+            }
+
+            label {
+                margin-top: 5px;
+                display: inline-block;
+            }
+
+            button, input[type=reset] {
+                font-size: 1.1em;
+                padding: 5px 15px;
+                display: inline-block;
+                margin-top: 15px;
+                border-radius: 5px;
+                border: none;
+                .linear-gradient(darken(#68D1FF,10%),0%,#8CFFFB,100%);
+                border-bottom: 1px solid black;
+                color: #333;
+
+                &:hover {
+                    background: lighten( #68D1FF,10%);
+                }
+            }
+        }
+    }
+}

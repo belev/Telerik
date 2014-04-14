@@ -1,0 +1,75 @@
+﻿html,
+body,
+div,
+ul,
+li,
+img,
+span,
+a {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, 'DejaVu Sans', 'Liberation Sans', Freesans, sans-serif;
+    font-size: 16px;
+}
+
+#wrapper {
+    width: 960px;
+}
+
+    #wrapper > div {
+        width: 700px;
+        margin-left: 15px;
+        margin-top: 15px;
+        background: #CCCCCC;
+        border: none;
+        border-radius: 5px;
+    }
+
+        #wrapper > div div {
+            display: inline-block;
+        }
+
+            #wrapper > div div.holder {
+                padding: 10px 5px 10px 10px;
+            }
+
+                #wrapper > div div.holder img {
+                    width: 550px;
+                    border-radius: 5px;
+                }
+
+            #wrapper > div div.playlist {
+                margin: 0 auto;
+            }
+
+                #wrapper > div div.playlist ul {
+                    position: absolute;
+                    top: 25px;
+                    list-style-type: none;
+                }
+
+                    #wrapper > div div.playlist ul li {
+                        border-bottom: 1px solid black;
+                        padding: 5px 2px 5px 8px;
+                        margin-left: 1px;
+                    }
+
+                        #wrapper > div div.playlist ul li a {
+                            text-decoration: none;
+                            color: black;
+                            font-weight: bold;
+                        }
+
+                            #wrapper > div div.playlist ul li a img {
+                                border-radius: 10px;
+                                margin: 0 auto;
+                                display: block;
+                            }
+
+                        #wrapper > div div.playlist ul li:hover a {
+                            text-decoration: underline;
+                        }
+/*# sourceMappingURL=task2.css.map */

@@ -1,0 +1,129 @@
+﻿html, body, div, ul, li, a, table, thead, tbody, tr, th, td, p, h1 {
+    margin: 0;
+    padding: 0;
+}
+
+.linear-gradient(@from-color, @from-pos, @to-color, @to-pos) {
+    background-image: -webkit-gradient( linear, left top, left bottom, color-stop(0, @from-color), color-stop(1, @to-color) );
+    background-image: -o-linear-gradient(bottom, @from-color @from-pos, @to-color @to-pos);
+    background-image: -moz-linear-gradient(bottom, @from-color @from-pos, @to-color @to-pos);
+    background-image: -webkit-linear-gradient(bottom, @from-color @from-pos, @to-color @to-pos);
+    background-image: -ms-linear-gradient(bottom, @from-color @from-pos, @to-color @to-pos);
+    background-image: linear-gradient(to bottom, @from-color @from-pos, @to-color @to-pos);
+}
+
+body {
+    @default-font-family: Helvetica, Arial, 'DejaVu Sans', 'Liberation Sans', Freesans, sans-serif;
+    @default-font-size: 18px;
+    @default-width: 960px;
+
+    font-family: @default-font-family;
+    font-size: @default-font-size;
+
+    div#wrapper {
+        width: @default-width;
+
+        ul.accordion {
+            list-style-type: none;
+            margin-left: 50px;
+            margin-top: 50px;
+            width: 370px;
+            border: 1px solid black;
+            text-align: center;
+            color: #444444;
+
+            li {
+                display: block;
+                border-bottom: 2px solid black;
+                background: #AAAAAA;
+                position: relative;
+
+                a.accordion-btn {
+                    text-decoration: none;
+                    display: block;
+                    color: #444444;
+                    font-weight: bold;
+                    font-size: 1.1em;
+                    .linear-gradient(#EEEEEE, 0%, #AAAAAA, 100%);
+                }
+
+                div.accordion-content {
+                    display: none;
+                    position: relative;
+                    padding-top: 10px;
+                    padding-bottom: 5px;
+                    padding-left: 20px;
+                    padding-right: 15px;
+                    text-align: left;
+                    font-size: 0.9em;
+
+                    h1, p {
+                        text-align: center;
+                    }
+
+                    h1 {
+                        color: #5E5E5E;
+                        font-size: 1.6em;
+                        margin-bottom: 5px;
+                    }
+
+                    p {
+                        text-align: justify;
+                    }
+
+                    table {
+                        border: 1px solid black;
+                        border-collapse: collapse;
+                        margin-top: 10px;
+                        margin-bottom: 10px;
+                        text-align: center;
+
+                        tr {
+
+                            th, td {
+                                border: 1px solid black;
+                                padding: 5px;
+                            }
+
+                            th {
+                                .linear-gradient(#ECECEC, 0, #898989, 100%);
+
+                                &:first-of-type {
+                                    border-top-left-radius: 15px;
+                                }
+                            }
+
+                            td {
+                                color: white;
+                            }
+
+                            &:nth-child(2n + 1) {
+                                .linear-gradient(#CBCBCB, 0, #898989, 100%);
+                            }
+
+                            &:nth-child(2n) {
+                                .linear-gradient(#898989, 0, #CBCBCB, 100%);
+                            }
+                        }
+                    }
+                }
+
+                &:last-of-type {
+                    border-bottom: none;
+                }
+
+                &:hover {
+                    .accordion-btn {
+                        background: #AAAAAA;
+                    }
+                }
+
+                &.current {
+                    .accordion-content {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,40 @@
+﻿body, ul, li {
+    padding: 0;
+    margin: 0;
+}
+
+ul {
+    list-style-type: none;
+
+
+    li {
+
+        a {
+            text-decoration: none;
+            color: black;
+
+            &:hover {
+                text-decoration: underline;
+                color: black;
+            }
+        }
+
+        & > ul {
+            display: none;
+
+            li {
+                a {
+                    color: gray;
+                }
+            }
+        }
+
+        &:hover {
+
+            & > ul {
+                display: block;
+                padding-left: 20px;
+            }
+        }
+    }
+}

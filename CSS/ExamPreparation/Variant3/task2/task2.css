@@ -1,0 +1,54 @@
+﻿html,
+body,
+div,
+ul,
+li,
+a,
+img {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-size: 16px;
+  font-family: Helvetica, Arial, 'DejaVu Sans', 'Liberation Sans', Freesans, sans-serif;
+}
+body div#wrapper {
+  width: 960px;
+}
+body div#wrapper div.select-list {
+  margin-left: 25px;
+  margin-top: 25px;
+}
+body div#wrapper div.select-list ul {
+  list-style-type: none;
+  display: inline-block;
+  height: 200px;
+  width: 150px;
+  border-radius: 5px;
+  overflow-y: scroll;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #8168ff), color-stop(1, #ffffff));
+  background-image: -o-linear-gradient(bottom, #8168ff 0%, #ffffff 100%);
+  background-image: -moz-linear-gradient(bottom, #8168ff 0%, #ffffff 100%);
+  background-image: -webkit-linear-gradient(bottom, #8168ff 0%, #ffffff 100%);
+  background-image: -ms-linear-gradient(bottom, #8168ff 0%, #ffffff 100%);
+  background-image: linear-gradient(to bottom, #8168ff 0%, #ffffff 100%);
+}
+body div#wrapper div.select-list ul li {
+  padding: 5px 15px;
+  font-size: 1em;
+  border-bottom: 1px solid black;
+}
+body div#wrapper div.select-list ul li.selected {
+  background: #6C4EFF;
+}
+body div#wrapper div.select-list ul li:first-letter {
+  text-decoration: underline;
+}
+body div#wrapper div.select-list ul li:last-of-type {
+  border-bottom: none;
+}
+body div#wrapper div.select-list a.btn-unselect img,
+body div#wrapper div.select-list a.btn-select img {
+  margin-bottom: 80px;
+}
+/*# sourceMappingURL=task2.css.map */

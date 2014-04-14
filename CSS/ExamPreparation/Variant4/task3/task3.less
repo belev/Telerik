@@ -1,0 +1,112 @@
+﻿html, body, div, hgroup, h2, h3, p, a {
+    margin: 0;
+    padding: 0;
+}
+
+#wrapper {
+    font-family: Arial, 'DejaVu Sans', 'Liberation Sans', Freesans, sans-serif;
+    font-size: 16px;
+    width: 960px;
+    margin-left: 20px;
+    margin-top: 20px;
+    zoom: 1;
+
+
+    & > div {
+        width: 140px;
+        height: 250px;
+        float: left;
+        border-top: 2px solid #D3D7DA;
+        border-bottom: 2px solid #D3D7DA;
+        padding: 10px 4px 0px 4px;
+
+        &:first-of-type {
+            border-left: 2px solid #D3D7DA;
+        }
+
+        &:nth-of-type(2n) {
+            height: 270px;
+            border-left: 2px solid #D3D7DA;
+            border-right: 2px solid #D3D7DA;
+            background: #F1F2F3;
+            background: -moz-linear-gradient(top, #ffffff 20%, #F1F2F3 100%);
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(20%, #ffffff), color-stop(100%, #F1F2F3));
+            background: -webkit-linear-gradient(top, #ffffff 20%, #F1F2F3 100%);
+            background: -o-linear-gradient(top, #ffffff 20%, #F1F2F3 100%);
+            background: -ms-linear-gradient(top, #ffffff 20%, #F1F2F3 100%);
+            background: linear-gradient(to bottom, #ffffff 20%, #F1F2F3 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#F1F2F3', GradientType=0);
+        }
+
+        &:nth-of-type(1) hgroup {
+            background: url('imgs/install.png') no-repeat;
+        }
+
+        &:nth-of-type(2) hgroup {
+            background: url('imgs/tuneUp.png') no-repeat;
+        }
+
+        &:nth-of-type(3) hgroup {
+            background: url('imgs/manage.png') no-repeat;
+        }
+
+        &:nth-of-type(4) hgroup {
+            background: url('imgs/openSource.png') no-repeat;
+        }
+
+        &:nth-of-type(5) hgroup {
+            background: url('imgs/twitter.png') no-repeat;
+        }
+
+        &:nth-of-type(6) hgroup {
+            background: url('imgs/about.png') no-repeat;
+        }
+
+        hgroup {
+            background-position: left bottom !important;
+            padding-left: 40px;
+            height: 40px;
+            display: table-cell;
+            vertical-align: bottom;
+
+            h2 {
+                font-size: 1em;
+            }
+
+            h3 {
+                font-size: 1em;
+            }
+        }
+    }
+
+    &:after {
+        content: "";
+        display: block;
+        height: 0;
+        clear: both;
+    }
+
+    a {
+        display: block;
+        text-decoration: none;
+        color: #C72D2F;
+
+        span {
+            text-transform: uppercase;
+        }
+    }
+
+    p {
+        margin-bottom: 5px;
+        margin-top: 16px;
+    }
+
+    .yellowBox {
+        border: 1px solid yellow;
+        background-color: #FFFFDD;
+
+        a {
+            display: inline-block;
+        }
+    }
+}

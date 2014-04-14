@@ -1,0 +1,150 @@
+﻿html, body, div, ul, li, a, span {
+    margin: 0;
+    padding: 0;
+}
+
+.linear-gradient(@from-color, @from-pos, @to-color, @to-pos) {
+    background-image: -webkit-gradient( linear, left top, left bottom, color-stop(0, @from-color), color-stop(1, @to-color) );
+    background-image: -o-linear-gradient(bottom, @from-color @from-pos, @to-color @to-pos);
+    background-image: -moz-linear-gradient(bottom, @from-color @from-pos, @to-color @to-pos);
+    background-image: -webkit-linear-gradient(bottom, @from-color @from-pos, @to-color @to-pos);
+    background-image: -ms-linear-gradient(bottom, @from-color @from-pos, @to-color @to-pos);
+    background-image: linear-gradient(to bottom, @from-color @from-pos, @to-color @to-pos);
+}
+
+.clearfix() {
+    zoom: 1;
+
+    &:after {
+        content: "";
+        display: block;
+        height: 0;
+        clear: both;
+    }
+}
+
+body {
+    @default-font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', 'DejaVu Sans Condensed', sans-serif;
+    @default-font-size: 16px;
+    @default-width: 960px;
+    @default-background-color: #AAFFEF;
+    @default-color: #0094FF;
+
+    font-family: @default-font-family;
+    font-size: @default-font-size;
+
+    div#wrapper {
+        width: @default-width;
+
+        ul {
+            list-style-type: none;
+            color: @default-color;
+
+            &.msg-bar {
+                margin-left: 50px;
+                margin-top: 205px;
+                width: 465px;
+                position: relative;
+                display: inline-block;
+
+                & > li {
+                    display: inline-block;
+                    padding-top: 5px;
+
+                    a {
+                        text-decoration: none;
+                        display: inline-block;
+                        color: @default-color;
+                        .linear-gradient(@default-background-color, 0%, #13FFD2, 100%);
+                        padding: 5px 15px;
+                        border: 1px solid black;
+                    }
+
+                    &:hover {
+                        .linear-gradient(#AAFFEF,20%,darken(#AAFFEF,30%),100%);
+
+                        a {
+                            background: #00DDB3;
+                            border-top: none;
+                        }
+
+                        .msg-bar-content {
+                            display: block;
+                        }
+                    }
+                }
+
+                div.msg-bar-content {
+                    display: none;
+                    position: absolute;
+                    top: -165px;
+                    left: 0;
+                    border: 1px solid black;
+                    border-bottom: none;
+                    border-top-left-radius: 15px;
+                    border-top-right-radius: 15px;
+                    background: @default-background-color;
+
+                    ul {
+                        border-top-left-radius: 15px;
+                        border-top-right-radius: 15px;
+                        width: 460px;
+                        text-align: right;
+
+                        li {
+                            padding-left: 15px;
+
+                            &.me-item {
+                                span.user:before {
+                                    content: url("imgs/me.png");
+                                    padding-right: 5px;
+                                }
+                            }
+
+                            &.other-item {
+                                span.user:before {
+                                    content: url("imgs/male.png");
+                                    padding-right: 5px;
+                                }
+                            }
+
+                            span {
+                                margin-right: 15px;
+                                margin-left: 105px;
+                                margin-top: 10px;
+                                padding-right: 15px;
+                                padding-bottom: 5px;
+                                display: block;
+                                border-bottom: 1px solid black;
+
+                                &.user {
+                                    border: 1px solid black;
+                                    border-radius: 30px;
+                                    padding: 5px;
+                                    padding-right: 15px;
+                                    float: left;
+                                    margin-bottom: 5px;
+                                    margin-left: 0;
+                                    margin-top: 0;
+                                    clear: both;
+                                }
+                            }
+
+                            &:last-of-type {
+                                border-bottom: none;
+
+                                span:not(.user) {
+                                    border-bottom: none;
+                                }
+                            }
+
+                            &:first-of-type {
+                                padding-top: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

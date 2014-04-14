@@ -1,0 +1,77 @@
+﻿body {
+    background: #595959;
+    font-family: Myriad Pro, Arial, sans-serif;
+}
+
+th, tr, td, table, p, body {
+    margin: 0;
+    padding: 0;
+}
+
+table {
+    border: 0;
+}
+
+
+th {
+    color: #808080;
+    font-size: 22px;
+    font-weight: normal;
+}
+
+td, th {
+    padding: 0 10px 25px 10px;
+    vertical-align: top;
+    text-align: left;
+}
+
+p {
+    padding: 0px;
+}
+
+.name_paragraph {
+    height: 22px;
+}
+
+.last_action_second_paragraph {
+    height: 20px;
+}
+
+.last_action_first_paragraph {
+    height: 45px;
+}
+
+.left_column {
+    color: #F3EFE7;
+    font-style: italic;
+    text-align: left;
+}
+
+.red_text {
+    font-weight: bold;
+    color: #D0140D;
+}
+
+.gray_text {
+    color: #C4C3BD;
+}
+
+.orange_text {
+    font-weight: bold;
+    color: #E26A26;
+}
+
+a:link {
+    color: #F9F2B0;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #F9F2B0;
+    text-decoration: none;
+}
+
+img {
+    height: 13px;
+    width: 13px;
+}

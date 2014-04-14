@@ -1,0 +1,97 @@
+﻿html,
+body,
+div,
+form,
+legend,
+fieldset,
+label,
+input,
+button {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-size: 16px;
+  font-family: Verdana, Geneva, 'DejaVu Sans', sans-serif;
+  color: #333333;
+}
+body div#wrapper {
+  width: 960px;
+  font-family: Verdana, Geneva, 'DejaVu Sans', sans-serif;
+}
+body div#wrapper form {
+  padding: 20px 15px 15px 15px;
+  width: 380px;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #68d1ff), color-stop(1, #8cfffb));
+  background-image: -o-linear-gradient(bottom, #68d1ff 0%, #8cfffb 100%);
+  background-image: -moz-linear-gradient(bottom, #68d1ff 0%, #8cfffb 100%);
+  background-image: -webkit-linear-gradient(bottom, #68d1ff 0%, #8cfffb 100%);
+  background-image: -ms-linear-gradient(bottom, #68d1ff 0%, #8cfffb 100%);
+  background-image: linear-gradient(to bottom, #68d1ff 0%, #8cfffb 100%);
+  margin-left: 25px;
+  margin-top: 25px;
+  border: 1px solid #333333;
+  border-radius: 15px;
+  text-align: right;
+}
+body div#wrapper form fieldset {
+  border: 3px solid #333333;
+  border-radius: 5px;
+  text-align: right;
+  padding-right: 15px;
+  padding-bottom: 5px;
+}
+body div#wrapper form fieldset legend {
+  padding: 0 15px;
+  margin-bottom: 5px;
+  font-size: 1.3em;
+  font-style: italic;
+  font-family: Verdana, Geneva, 'DejaVu Sans', sans-serif;
+}
+body div#wrapper form fieldset input[type=text],
+body div#wrapper form fieldset input[type=password],
+body div#wrapper form fieldset input[type=number] {
+  border: 1px solid #008FCE;
+  border-radius: 5px;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #69d2ff), color-stop(1, #8bfefb));
+  background-image: -o-linear-gradient(bottom, #69d2ff 0%, #8bfefb 100%);
+  background-image: -moz-linear-gradient(bottom, #69d2ff 0%, #8bfefb 100%);
+  background-image: -webkit-linear-gradient(bottom, #69d2ff 0%, #8bfefb 100%);
+  background-image: -ms-linear-gradient(bottom, #69d2ff 0%, #8bfefb 100%);
+  background-image: linear-gradient(to bottom, #69d2ff 0%, #8bfefb 100%);
+  padding: 5px 0 5px 15px;
+  margin-bottom: 1px;
+  color: #333333;
+  width: 165px;
+  font-size: 0.8em;
+}
+body div#wrapper form fieldset input[type=number] {
+  width: 35px;
+  padding-left: 5px;
+}
+body div#wrapper form label {
+  margin-top: 5px;
+  display: inline-block;
+}
+body div#wrapper form button,
+body div#wrapper form input[type=reset] {
+  font-size: 1.1em;
+  padding: 5px 15px;
+  display: inline-block;
+  margin-top: 15px;
+  border-radius: 5px;
+  border: none;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #35c1ff), color-stop(1, #8cfffb));
+  background-image: -o-linear-gradient(bottom, #35c1ff 0%, #8cfffb 100%);
+  background-image: -moz-linear-gradient(bottom, #35c1ff 0%, #8cfffb 100%);
+  background-image: -webkit-linear-gradient(bottom, #35c1ff 0%, #8cfffb 100%);
+  background-image: -ms-linear-gradient(bottom, #35c1ff 0%, #8cfffb 100%);
+  background-image: linear-gradient(to bottom, #35c1ff 0%, #8cfffb 100%);
+  border-bottom: 1px solid black;
+  color: #333;
+}
+body div#wrapper form button:hover,
+body div#wrapper form input[type=reset]:hover {
+  background: #9be1ff;
+}
+/*# sourceMappingURL=task3.css.map */

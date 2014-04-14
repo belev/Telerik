@@ -1,0 +1,75 @@
+﻿form,
+section,
+article,
+fieldset,
+p {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-size: 15px;
+  background-color: #3B3B3B;
+  color: #A4A4A4;
+  border: 0.1em solid #806850;
+  border-radius: 10px;
+}
+fieldset {
+  border: none;
+}
+form {
+  padding: 25px 0 26px 60px;
+  background-color: #343434;
+  background-image: url("monitor.png");
+  -moz-background-size: 58px 62px;
+  -o-background-size: 58px 62px;
+  -webkit-background-size: 58px 62px;
+  background-size: 58px 62px;
+  background-position-x: 8px;
+  background-position-y: 5px;
+  background-repeat: no-repeat;
+  box-shadow: inset 0 -8px 10px #292929;
+  color: #FFFFFF;
+  border-left: 0.1em solid #806850;
+  border-right: 0.1em solid #806850;
+  border-top: 0.1em solid #806850;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+form legend {
+  font-size: 19px;
+  font-weight: bold;
+}
+form input {
+  padding-left: 10px;
+}
+form legend,
+form input,
+form button {
+  float: left;
+  margin-left: 17px;
+}
+form button {
+  border: 1px solid white;
+  border-radius: 10px;
+  background-color: rgba(213, 120, 120, 0.9);
+  box-shadow: inset 0 -15px 5px #dc0c10;
+  width: 50px;
+  height: 25px;
+  color: #FFFFFF;
+}
+.managament-article {
+  padding-left: 10px;
+  margin-bottom: 10px;
+  width: 550px;
+}
+.managament-article .managament-article-heading {
+  color: #FFD318;
+  font-weight: normal;
+  font-size: 30px;
+  margin: 20px 0;
+}
+.managament-article p strong {
+  color: #FFFFFF;
+  font-weight: normal;
+}
+/*# sourceMappingURL=03.TotalManagamentStyle.css.map */

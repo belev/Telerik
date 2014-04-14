@@ -1,0 +1,126 @@
+﻿html,
+body,
+div,
+ul,
+li,
+a,
+table,
+thead,
+tbody,
+tr,
+th,
+td,
+p,
+h1 {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Helvetica, Arial, 'DejaVu Sans', 'Liberation Sans', Freesans, sans-serif;
+  font-size: 18px;
+}
+body div#wrapper {
+  width: 960px;
+}
+body div#wrapper ul.accordion {
+  list-style-type: none;
+  margin-left: 50px;
+  margin-top: 50px;
+  width: 370px;
+  border: 1px solid black;
+  text-align: center;
+  color: #444444;
+}
+body div#wrapper ul.accordion li {
+  display: block;
+  border-bottom: 2px solid black;
+  background: #AAAAAA;
+  position: relative;
+}
+body div#wrapper ul.accordion li a.accordion-btn {
+  text-decoration: none;
+  display: block;
+  color: #444444;
+  font-weight: bold;
+  font-size: 1.1em;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #eeeeee), color-stop(1, #aaaaaa));
+  background-image: -o-linear-gradient(bottom, #eeeeee 0%, #aaaaaa 100%);
+  background-image: -moz-linear-gradient(bottom, #eeeeee 0%, #aaaaaa 100%);
+  background-image: -webkit-linear-gradient(bottom, #eeeeee 0%, #aaaaaa 100%);
+  background-image: -ms-linear-gradient(bottom, #eeeeee 0%, #aaaaaa 100%);
+  background-image: linear-gradient(to bottom, #eeeeee 0%, #aaaaaa 100%);
+}
+body div#wrapper ul.accordion li div.accordion-content {
+  display: none;
+  position: relative;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  padding-left: 20px;
+  padding-right: 15px;
+  text-align: left;
+  font-size: 0.9em;
+}
+body div#wrapper ul.accordion li div.accordion-content h1,
+body div#wrapper ul.accordion li div.accordion-content p {
+  text-align: center;
+}
+body div#wrapper ul.accordion li div.accordion-content h1 {
+  color: #5E5E5E;
+  font-size: 1.6em;
+  margin-bottom: 5px;
+}
+body div#wrapper ul.accordion li div.accordion-content p {
+  text-align: justify;
+}
+body div#wrapper ul.accordion li div.accordion-content table {
+  border: 1px solid black;
+  border-collapse: collapse;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+body div#wrapper ul.accordion li div.accordion-content table tr th,
+body div#wrapper ul.accordion li div.accordion-content table tr td {
+  border: 1px solid black;
+  padding: 5px;
+}
+body div#wrapper ul.accordion li div.accordion-content table tr th {
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #ececec), color-stop(1, #898989));
+  background-image: -o-linear-gradient(bottom, #ececec 0, #898989 100%);
+  background-image: -moz-linear-gradient(bottom, #ececec 0, #898989 100%);
+  background-image: -webkit-linear-gradient(bottom, #ececec 0, #898989 100%);
+  background-image: -ms-linear-gradient(bottom, #ececec 0, #898989 100%);
+  background-image: linear-gradient(to bottom, #ececec 0, #898989 100%);
+}
+body div#wrapper ul.accordion li div.accordion-content table tr th:first-of-type {
+  border-top-left-radius: 15px;
+}
+body div#wrapper ul.accordion li div.accordion-content table tr td {
+  color: white;
+}
+body div#wrapper ul.accordion li div.accordion-content table tr:nth-child(2n + 1) {
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #cbcbcb), color-stop(1, #898989));
+  background-image: -o-linear-gradient(bottom, #cbcbcb 0, #898989 100%);
+  background-image: -moz-linear-gradient(bottom, #cbcbcb 0, #898989 100%);
+  background-image: -webkit-linear-gradient(bottom, #cbcbcb 0, #898989 100%);
+  background-image: -ms-linear-gradient(bottom, #cbcbcb 0, #898989 100%);
+  background-image: linear-gradient(to bottom, #cbcbcb 0, #898989 100%);
+}
+body div#wrapper ul.accordion li div.accordion-content table tr:nth-child(2n) {
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #898989), color-stop(1, #cbcbcb));
+  background-image: -o-linear-gradient(bottom, #898989 0, #cbcbcb 100%);
+  background-image: -moz-linear-gradient(bottom, #898989 0, #cbcbcb 100%);
+  background-image: -webkit-linear-gradient(bottom, #898989 0, #cbcbcb 100%);
+  background-image: -ms-linear-gradient(bottom, #898989 0, #cbcbcb 100%);
+  background-image: linear-gradient(to bottom, #898989 0, #cbcbcb 100%);
+}
+body div#wrapper ul.accordion li:last-of-type {
+  border-bottom: none;
+}
+body div#wrapper ul.accordion li:hover .accordion-btn {
+  background: #AAAAAA;
+}
+body div#wrapper ul.accordion li.current .accordion-content {
+  display: block;
+}
+/*# sourceMappingURL=task1.css.map */

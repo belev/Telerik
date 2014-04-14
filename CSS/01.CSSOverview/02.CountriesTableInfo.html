@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title> Contries Table Info </title>
+    <link href="02.CountriesTableInfoStyle.css" rel="stylesheet" />
+</head>
+<body>
+    <table>
+        <colgroup>
+            <col class="contact_name_col" />
+            <col class="city_col" />
+            <col class="country_col" />
+            <col class="is_promoted_col" />
+        </colgroup>
+
+        <thead>
+            <tr>
+                <th> Contact name </th>
+                <th> City </th>
+                <th> Country </th>
+                <th> Is Promoted </th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td> Maria Anders </td>
+                <td> Berlin </td>
+                <td class="flag flag_germany">
+                    Germany
+                </td>
+
+                <td>
+                    <input type="checkbox" disabled="disabled" />
+                </td>
+            </tr>
+
+            <tr>
+                <td> Ana Trujillo </td>
+                <td> M&eacute;xico D.F. </td>
+                <td class="flag flag_mexico">
+                    Mexico
+                </td>
+
+                <td>
+                    <input type="checkbox" disabled="disabled" />
+                </td>
+            </tr>
+
+            <tr>
+                <td> Antonio Moreno </td>
+                <td> M&eacute;xico D.F. </td>
+                <td class="flag flag_mexico">
+                    Mexico
+                </td>
+
+                <td>
+                    <input type="checkbox" checked="checked" disabled="disabled" />
+                </td>
+            </tr>
+
+            <tr>
+                <td> Thomas Hardy </td>
+                <td> London </td>
+                <td class="flag flag_uk">
+                    UK
+                </td>
+
+                <td>
+                    <input type="checkbox" disabled="disabled" />
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

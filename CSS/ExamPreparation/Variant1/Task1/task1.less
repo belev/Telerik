@@ -1,0 +1,78 @@
+﻿html, body, div, aside, ul, li, a {
+    margin: 0;
+    padding: 0;
+}
+
+    div#wrapper {
+        font-family: Arial, 'DejaVu Sans', 'Liberation Sans', Freesans, sans-serif;
+        font-size: 16px;
+        width: 960px;
+
+        aside {
+            margin-top: 10px;
+            margin-left: 20px;
+            padding: 5px 15px;
+            display: inline-block;
+            border-radius: 10px;
+            background-image: -webkit-gradient( linear, left top, left bottom, color-stop(0, #D29BFF), color-stop(1, #8977FF) );
+            background-image: -o-linear-gradient(bottom, #D29BFF 0%, #8977FF 100%);
+            background-image: -moz-linear-gradient(bottom, #D29BFF 0%, #8977FF 100%);
+            background-image: -webkit-linear-gradient(bottom, #D29BFF 0%, #8977FF 100%);
+            background-image: -ms-linear-gradient(bottom, #D29BFF 0%, #8977FF 100%);
+            background-image: linear-gradient(to bottom, #D29BFF 0%, #8977FF 100%);
+
+            ul {
+                list-style-type: none;
+
+                li {
+                    border-bottom: 1px solid #9D00FF;
+                    padding: 5px 15px;
+                    position: relative;
+                    font-size: 1.3em;
+
+                    a {
+                        color: black;
+                        text-decoration: none;
+                    }
+
+                    ul {
+                        background-image: url(imgs/arrow.png);
+                        background-repeat: no-repeat;
+                        background-position: 5px 15px;
+                        display: none;
+                        position: absolute;
+                        top: -5px;
+                        left: 190px;
+                        background-color: #b5aaff;
+                        border-radius: 10px;
+                        padding: 5px;
+                        padding-left: 20px;
+                        text-align: center;
+
+                        li {
+                            font-size: 0.8em;
+                            width: 180px;
+
+                            &:hover {
+                                border: 1px solid #9D00FF;
+                                border-radius: 5px;
+                            }
+                        }
+                    }
+
+                    &:last-of-type {
+                        border: none;
+                    }
+
+                    &:hover {
+                        border: 1px solid #9D00FF;
+                        border-radius: 5px;
+
+                        ul {
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+    }

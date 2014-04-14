@@ -1,0 +1,93 @@
+﻿body {
+    font-family: Arial, sans-serif;
+}
+
+table {
+    border: none;
+    border-spacing: 0;
+}
+
+    table th {
+        background-image: url("border.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-position: center center;
+
+        border-top: none;
+        border-bottom: none;
+        border-left: 2px solid #3B9008;
+        border-right: 2px solid #0ed812;
+
+        color: #FFF;
+        background-color: #58BB06;
+        font-weight: normal;
+        text-align: left;
+        padding: 6px;
+        height: 22px;
+    }
+
+    table tr:nth-child(2n) {
+        background-color: #f2f2a0;
+    }
+
+    table td {
+        height: 30px;
+        text-align: left;
+        padding: 2px;
+        padding-left: 8px;
+        border-top: none;
+        border-bottom: none;
+        border-right: 2px solid #FFF;
+        border-left: 2px solid #D2D1BE;
+    }
+
+    table tr th:first-child {
+        border-left: none;
+    }
+
+    table tr th:last-child {
+        border-right: none;
+    }
+
+    table tr td:first-child {
+        border-left: none;
+    }
+
+    table tr td:last-child {
+        border-right: none;
+    }
+
+.contact_name_col {
+    width: 200px;
+}
+
+.city_col {
+    width: 150px;
+}
+
+.country_col {
+    width: 200px;
+}
+
+.is_promoted_col {
+    width: 100px;
+}
+
+.flag {
+    background-size: 30px 20px;
+    background-position: 10px center;
+    background-repeat:no-repeat;
+    padding-left: 50px;
+}
+
+td.flag.flag_germany {
+    background-image: url("germany_flag.jpg");
+}
+
+td.flag.flag_mexico {
+    background-image: url("mexico_flag.png");
+}
+
+td.flag.flag_uk {
+    background-image: url("uk_flag.jpg");
+}
