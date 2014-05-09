@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <label> Enter first number: </label>
+    <input type="text" id="first-number" />
+    <br />
+
+    <label> Enter second number: </label>
+    <input type="text" id="second-number" />
+    <br />
+
+    <label> Enter third number: </label>
+    <input type="text" id="third-number" />
+    <br />
+
+    <label> Enter fourth number: </label>
+    <input type="text" id="fourth-number" />
+    <br />
+
+    <label> Enter fifth number: </label>
+    <input type="text" id="fifth-number" />
+    <br />
+
+    <button onclick="findBiggestOfFive()"> Find biggest number </button>
+
+    <script>
+        function findBiggestOfFive() {
+
+            var firstNum = document.getElementById("first-number").value;
+            var secondNum = document.getElementById("second-number").value;
+            var thirdNum = document.getElementById("third-number").value;
+            var fourthNum = document.getElementById("fourth-number").value;
+            var fifthNum = document.getElementById("fifth-number").value;
+
+            if (isValidNumber(firstNum) && isValidNumber(secondNum) && isValidNumber(thirdNum) && isValidNumber(fourthNum) && isValidNumber(fifthNum)) {
+                var sequence = new Array();
+
+                sequence[0] = parseFloat(firstNum);
+                sequence[1] = parseFloat(secondNum);
+                sequence[2] = parseFloat(thirdNum);
+                sequence[3] = parseFloat(fourthNum);
+                sequence[4] = parseFloat(fifthNum);
+
+                var biggestNumber = sequence[0];
+
+                for (var i = 1; i < 5; i++) {
+                    if (biggestNumber < sequence[i]) {
+                        biggestNumber = sequence[i];
+                    }
+                }
+
+                console.log("All numbers: " + firstNum + " " + secondNum + " " + thirdNum + " " + fourthNum + " " + fifthNum);
+                console.log("The biggest number is: " + biggestNumber);
+            }
+            else {
+                console.log("There is invalid entered number.");
+            }
+        }
+
+        function isValidNumber(number) {
+            if (isFinite(number)) {
+                return true;
+            }
+
+            return false;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+        var someText = "ala bala portokala";
+
+        console.log(reverseString(someText));
+
+        // function to reverse string only with functions from js
+        // split the text so that we can get an array
+        // after we get the array use the reverse function
+        // and the use join with empty string to receive string again
+
+        //function reverseStringWithJSFunctions(text) {
+        //    return text.split("").reverse().join("");
+        //}
+
+        function reverseString(text) {
+            var reversedText = "";
+
+            for (var i = text.length - 1; i >= 0; i--) {
+                reversedText += text[i];
+            }
+
+            return reversedText;
+        }
+    </script>
+</body>
+</html>

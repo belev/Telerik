@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <label> Enter integer number: </label>
+    <input type="text" id="first-number" />
+
+    <br />
+
+    <label> Enter integer number: </label>
+    <input type="text" id="second-number" />
+
+    <br />
+    <button onclick="exchange()"> Exchange if greater</button>
+
+    <script>
+        function exchange() {
+            var firstNumber = document.getElementById("first-number").value;
+            var secondNumber = document.getElementById("second-number").value;
+
+            if (isValidIntNumber(firstNumber) && isValidIntNumber(secondNumber)) {
+                firstNumber = parseInt(firstNumber);
+                secondNumber = parseInt(secondNumber);
+
+                console.log("First number: " + firstNumber + " Second number: " + secondNumber);
+
+                if (firstNumber > secondNumber) {
+                    firstNumber ^= secondNumber;
+                    secondNumber ^= firstNumber;
+                    firstNumber ^= secondNumber;
+
+                    console.log("After exchange: " + "First number: " + firstNumber + " Second number: " + secondNumber);
+                }
+                else {
+                    console.log("First number is not greater than second number.");
+                }
+            }
+            else {
+                console.log("Invalid entered number.");
+            }
+        }
+
+        function isValidIntNumber(number) {
+            if (parseInt(number) == parseFloat(number) && isFinite(number)) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

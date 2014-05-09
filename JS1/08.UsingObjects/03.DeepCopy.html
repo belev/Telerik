@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+        function deepCopy(obj) {
+            if (typeof (obj) != "object") {
+                return obj;
+            }
+            else {
+                var objCopy = new Object();
+
+                // for each property in obj
+                // the copy object get the property from object
+                // call the function deepCopy again and thats how get the property value
+                for (var propertyName in obj) {
+                    objCopy[propertyName] = deepCopy(obj[propertyName]);
+                }
+
+                return objCopy;
+            }
+        }
+
+        var num1 = 5;
+        var num2 = deepCopy(num1);
+        console.log(num2);
+
+        var peshoObj =
+            {
+                name: "pesho",
+                age: 51,
+                sex: "male"
+            }
+
+        var goshoObj = deepCopy(peshoObj);
+        goshoObj.name = "gosho";
+        goshoObj.age = 15;
+
+        console.log(peshoObj);
+        console.log(goshoObj);
+
+    </script>
+
+</body>
+</html>

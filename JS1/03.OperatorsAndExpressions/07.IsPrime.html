@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Is prime</title>
+</head>
+<body>
+    <label> Enter integer number: </label>
+    <input type="text" id="number" />
+    <button onclick="checkIsPrime()"> Check </button>
+    <script>
+        function checkIsPrime() {
+            var number = document.getElementById("number").value;
+
+            if (isValidIntNumber(number)) {
+                number = parseInt(number);
+
+                if (isPrime(number)) {
+                    console.log(number + " is prime");
+                }
+                else {
+                    console.log(number + " is not prime");
+                }
+            }
+            else {
+                console.log("Invalid number or too big number.");
+            }
+        }
+
+        function isPrime(number) {
+            for (var i = 2; i * i < number; i++) {
+                if (number % i == 0) {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        function isValidIntNumber(number) {
+            if (parseInt(number) == parseFloat(number) && number <= 100 && number > Number.MIN_VALUE) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <label> Enter first number: </label>
+    <input type="text" id="first-number" />
+    <br />
+
+    <label> Enter second number: </label>
+    <input type="text" id="second-number" />
+    <br />
+
+    <label> Enter third number: </label>
+    <input type="text" id="third-number" />
+    <br />
+
+    <button onclick="showProductSign()"> Check product sign </button>
+
+    <script>
+        function showProductSign() {
+            var firstNumber = document.getElementById("first-number").value;
+            var secondNumber = document.getElementById("second-number").value;
+            var thirdNumber = document.getElementById("third-number").value;
+
+            if (isValidNumber(firstNumber) && isValidNumber(secondNumber) && isValidNumber(thirdNumber)) {
+                firstNumber = parseFloat(firstNumber);
+                secondNumber = parseFloat(secondNumber);
+                thirdNumber = parseFloat(thirdNumber);
+
+                if (firstNumber == 0 || secondNumber == 0 || thirdNumber == 0) {
+                    console.log("The product is zero.");
+                }
+
+                else {
+                    var countPositive = 0;
+                    if (firstNumber > 0) {
+                        countPositive++;
+                    }
+
+                    if (secondNumber > 0) {
+                        countPositive++;
+                    }
+
+                    if (thirdNumber > 0) {
+                        countPositive++;
+                    }
+
+                    if (countPositive % 2 == 1) {
+                        console.log("The sign of the product is: +");
+                    }
+                    else {
+                        console.log("The sign of the product is: -");
+                    }
+                }
+            }
+            else {
+                console.log("Invalid entered number.");
+            }
+        }
+
+        function isValidNumber(number) {
+            if (isFinite(number)) {
+                return true;
+            }
+
+            return false;
+        }
+    </script>
+</body>
+</html>

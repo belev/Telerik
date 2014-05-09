@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Rectable area</title>
+</head>
+<body>
+    <label> Enter rectangle height: </label>
+    <input type="text" id="rect-height" />
+
+    <label> Enter rectangle width: </label>
+    <input type="text" id="rect-width" />
+    <button onclick="calculateArea()"> Calculate area </button>
+
+    <script>
+        function calculateArea() {
+            var height = document.getElementById("rect-height").value;
+            var width = document.getElementById("rect-width").value;
+
+            if (isValidNumber(height) && isValidNumber(width)) {
+				height = parseFloat(height);
+				width = parseFloat(width);
+			
+                var area = height * width;
+
+                console.log("The rectangle's area is: " + area);
+            }
+            else {
+                console.log("Height or width is not valid number.")
+            }
+        }
+
+        function isValidNumber(number) {
+            if (parseInt(number) !== "NaN" && parseFloat(number) !== "Nan" && number < Number.MAX_VALUE && number > Number.MIN_VALUE) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+        var text = "We are <mixcase>living</mixcase> in a <upcase>yellow submarine</upcase>. We <mixcase>don't</mixcase> have <lowcase>anything</lowcase> else.";
+        // var text = "<mixcase> some <upcase> stuff <lowercase> HERE </lowercase> </upcase> </mixcase>";
+
+        console.log(replaceRegions(text));
+
+        function replaceRegions(text) {
+            text = new String(text);
+
+            var result = "";
+
+            // use cases as stack because we can have nested regions, for example:
+            // <mixcase> some <upcase> stuff <lowercase> here </lowercase> </upcase> </mixcase>
+
+            // we store the functions mixCase, upCase, lowerCase here in the array regions
+            var regions = [];
+
+            for (var i = 0; i < text.length; i++) {
+                if (text[i] == '<') {
+                    i++;
+                    if (text[i] == "/") {
+                        regions.pop();
+                        i = text.indexOf('>', i);
+                    }
+                    else if (text[i] == 'm') {
+                        regions.push(mixCase);
+                        i = text.indexOf('>', i);
+                    }
+                    else if (text[i] == 'u') {
+                        regions.push(upCase);
+                        i = text.indexOf('>', i);
+                    }
+                    else if (text[i] == 'l') {
+                        regions.push(lowCase);
+                        i = text.indexOf('>', i);
+                    }
+                    else {
+                        alert(i + "Something wrong at this index mr Developer");
+                    }
+                }
+                else {
+                    if (regions.length == 0) {
+                        result += text[i];
+                    }
+                    else {
+                        var currLetter = text[i];
+
+                        // if we have at least one region in regions than apply its effect to the current letter
+                        // start from the end of the regions because of the nested regions
+
+                        // in this example : // <mixcase> some <upcase> stuff <lowercase> HERE </lowercase> </upcase> </mixcase>
+                        // we should start to change the letters from the lowercase region
+                        // and HERE will become here
+                        // after that apply the upcase and here will become HERE again
+                        // and at last we apply the mixcase
+
+                        for (var j = regions.length - 1; j >= 0; j--) {
+                            currLetter = regions[j](currLetter);
+                        }
+
+                        result += currLetter;
+                    }
+                }
+            }
+
+            return result;
+        }
+
+        function mixCase(letter) {
+            var upper = parseInt(Math.random() * 2);
+            if (upper === 0) {
+                return letter.toUpperCase();
+            }
+            else {
+                return letter.toLowerCase();
+            }
+        }
+
+        function lowCase(letter) {
+            return letter.toLowerCase();
+        }
+
+        function upCase(letter) {
+            return letter.toUpperCase();
+        }
+    </script>
+</body>
+</html>

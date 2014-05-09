@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <div>
+        Nested 1
+        <div>
+            Nested 2
+            <div>
+                Nested 3
+            </div>
+        </div>
+    </div>
+
+    <div> Not nested 4 </div>
+    <div> Not nested 5 </div>
+    <div>
+        6
+        <div>
+            7
+            <div>
+                8
+            </div>
+        </div>
+    </div>
+
+    <script>
+        console.log("Number of divs: " + countNumberOfDivs());
+
+
+        function countNumberOfDivs() {
+            var numberOfDivs = document.getElementsByTagName('div').length;
+
+            return numberOfDivs;
+        }
+    </script>
+</body>
+</html>

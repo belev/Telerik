@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <script type="text/javascript">
+        function formatText(formattingString) {
+            var formattingStrArguments = arguments;
+
+            // replace all curly brackets with some number inside
+            var regex = /{([0-9]+)}/g;
+
+            return formattingString.replace(regex, function (match, p1) {
+                return formattingStrArguments[(p1++) + 1];
+            })
+        }
+
+        console.log(formatText('{0}, {1}, {0} text {2}', 1, 'pesho', 'Gosho'));
+    </script>
+</body>
+</html>

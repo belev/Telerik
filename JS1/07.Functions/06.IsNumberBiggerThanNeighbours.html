@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+        var sequence = [5, 1, 1134, 134, -6, 536, 451, 9324, 432, 36, -34, 3542542, -599, 19, 3, 5, -1, -1, 0];
+
+        for (var i = 0; i < sequence.length; ++i) {
+            console.log('biggerThanNeighbours at position ' + i + ' is ' + biggerThanNeighbours(sequence, i));
+        }
+
+        function biggerThanNeighbours(sequence, numberPosition) {
+            if (numberPosition <= 0) {
+                return false;
+            }
+            else if (numberPosition >= sequence.length - 1) {
+                return false;
+            }
+
+            if (numberPosition > 0 && sequence[numberPosition - 1] > sequence[numberPosition]) {
+                return false;
+            }
+
+            if (numberPosition < sequence.length - 1 && sequence[numberPosition + 1] > sequence[numberPosition]) {
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>

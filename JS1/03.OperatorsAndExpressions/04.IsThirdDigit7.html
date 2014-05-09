@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Third digit 7 ?</title>
+</head>
+<body>
+    <label> Enter number: </label>
+    <input type="text" id="entered-number" />
+    <button onclick="checkThirdDigit()"> Check </button>
+
+    <script>
+        function checkThirdDigit() {
+            var number = document.getElementById("entered-number").value;
+
+            if (isValidIntNumber(number)) {
+                var thirdDigit = parseInt((number / 100)) % 10;
+
+                if (thirdDigit == '7') {
+                    console.log("Number: " + number + " Third digit is 7.");
+                }
+                else {
+                    console.log("Number: " + number + ". Third digit is not 7.");
+                }
+            }
+            else {
+                console.log("Not valid number.");
+            }
+        }
+
+        function isValidIntNumber(number) {
+            if (parseInt(number) == parseFloat(number) && number < Number.MAX_VALUE && number > Number.MIN_VALUE) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

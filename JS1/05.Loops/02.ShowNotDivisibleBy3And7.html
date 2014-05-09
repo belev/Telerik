@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <label> Enter integer number: </label>
+    <input type="text" id="number" />
+    <button onclick="showNumbersToN()"> Show numbers from 1 to N not divisible by 3 and 7 </button>
+
+    <script>
+        function showNumbersToN() {
+            var number = document.getElementById("number").value;
+
+            if (isValidIntNumber(number)) {
+                number = parseInt(number);
+
+                var result = "";
+
+                for (var i = 1; i <= number; i++) {
+
+                    if (i % 21 != 0) {
+                        result += i + " ";
+                    }
+                }
+
+                console.log(result);
+            }
+            else {
+                console.log("Invalid entered number.");
+            }
+        }
+
+        function isValidIntNumber(number) {
+            if (parseInt(number) == parseFloat(number) && isFinite(number)) {
+                return true;
+            }
+
+            return false;
+        }
+    </script>
+</body>
+</html>

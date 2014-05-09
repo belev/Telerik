@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+        var people = [
+                createPerson("pesho", "petrov", 43),
+                createPerson("gosho", "georgiev", 63),
+                createPerson("mariika", "marinova", 10),
+                createPerson("ivancho", "ivanov", 18)
+        ];
+
+        findYoungestPerson(people);
+
+        function createPerson(firstName, lastName, age) {
+            return {
+                firstName: firstName,
+                lastName: lastName,
+                age: age,
+                toString: function () {
+                    return this.firstName + " " + this.lastName + " " + this.age + " years old";
+                }
+            };
+        }
+
+        function findYoungestPerson(people) {
+            if (people.length == 0) {
+                console.log("Empty people array.")
+            }
+            else {
+                var youngestPersonIndex = 0;
+
+                for (var i = 1; i < people.length; i++) {
+                    if (people[i].age < people[youngestPersonIndex].age) {
+                        youngestPersonIndex = i;
+                    }
+                }
+
+                console.log(people[youngestPersonIndex].toString());
+            }
+        }
+    </script>
+</body>
+</html>

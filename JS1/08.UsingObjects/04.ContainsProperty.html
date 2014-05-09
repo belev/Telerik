@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+        var peshoObj = {
+            name: "pesho",
+            age: 17,
+            gender: "male",
+            university: "none"
+        };
+
+        console.log(hasProperty(peshoObj, "name"));
+        console.log(hasProperty(peshoObj, "length"));
+        console.log(hasProperty(peshoObj, "toString"));
+        console.log(hasProperty(peshoObj, "age"));
+
+        function hasProperty(obj, propertyName) {
+
+
+            // if the object has its own property
+            for (var i in obj) {
+                if (i === propertyName) {
+                    return true;
+                }
+            }
+
+
+            // can use this if search as whole if the object has some property
+            // for example is we check with that code for property "toString" the result will be true (means peshoObj have toString property
+            // which is not own property of the object peshoObj but peshoObj has it.
+
+            //if (propertyName in obj) {
+            //    return true;
+            //}
+
+            return false;
+        }
+    </script>
+</body>
+</html>

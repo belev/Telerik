@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <label> Enter first char array: </label>
+    <input type="text" id="first-array" />
+    <br />
+
+    <label> Enter second char array</label>
+    <input type="text" id="second-array" />
+    <br />
+
+    <button onclick="compareLexicographically()"> Compare texts </button>
+
+    <script>
+        function compareLexicographically() {
+            var firstArray = document.getElementById("first-array").value;
+            var secondArray = document.getElementById("second-array").value;
+
+            var minLength = Math.min(firstArray.length, secondArray.length);
+            var areDifferent = false;
+
+            for (var i = 0; i < minLength; ++i) {
+
+                if (firstArray[i] < secondArray[i]) {
+                    areDifferent = true;
+                    console.log("The first char array is lexicographically before the second char array");
+                    break;
+                }
+
+                else if (firstArray[i] > secondArray[i]) {
+                    areDifferent = true;
+                    console.log("The second char array is lexicographically before the first char array");
+                    break;
+                }
+            }
+
+            if (!areDifferent) {
+
+                if (firstArray.length < secondArray.length) {
+                    console.log("The first char array is lexicographically before the second char array");
+                }
+
+                else if (firstArray.length > secondArray.length) {
+                    console.log("The second char array is lexicographically before the first char array");
+                }
+
+                else {
+                    console.log("The arrays are equal");
+                }
+            }
+        }
+    </script>
+</body>
+</html>

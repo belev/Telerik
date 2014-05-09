@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <p id="first-paragraph"></p>
+    <p id="second-paragraph"></p>
+
+    <script>
+        function replaceNonBreakingWhitespaces(text, newValue) {
+            return text.split('&nbsp;').join(newValue);
+        }
+
+        // as we display in our html whitespace and non breaking whitespace there is no difference for the eye
+        // but after the replacement the result can be seen
+        document.getElementById('first-paragraph').innerHTML = 'Some&nbsp;random&nbsp;text to test&nbsp;replacing of&nbsp;non breaking&nbsp; whitespace.';
+
+        var text = document.getElementById('first-paragraph').innerHTML;
+
+        document.getElementById('second-paragraph').innerHTML = replaceNonBreakingWhitespaces(text, "&amp;nbsp;");
+    </script>
+</body>
+</html>

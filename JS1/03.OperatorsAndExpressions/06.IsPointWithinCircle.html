@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Point within circle</title>
+</head>
+<body>
+    <label> Enter x pos: </label>
+    <input type="text" id="x" />
+
+    <label> Enter y pos: </label>
+    <input type="text" id="y" />
+
+    <button onclick="checkPoint()"> Check point </button>
+
+    <script>
+        function checkPoint() {
+            var x = document.getElementById("x").value;
+            var y = document.getElementById("y").value;
+
+            x = parseFloat(x);
+            y = parseFloat(y);
+
+            var circleCenterX = 0;
+            var circleCenterY = 0;
+            var circleRadius = 5;
+
+            var dist2 = (x - circleCenterX) * (x - circleCenterX) + (y - circleCenterY) * (y - circleCenterY);
+
+            if (dist2 <= (circleRadius * circleRadius)) {
+                console.log("The point with coords: {" + x + " " + y + "}" + " is within the circle");
+            }
+            else {
+                console.log("The point with coords: {" + x + " " + y + "}" + " is outside the circle.")
+            }
+        }
+    </script>
+</body>
+</html>

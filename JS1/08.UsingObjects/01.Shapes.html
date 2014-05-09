@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+        var pointA = createPoint(0, 0);
+        var pointB = createPoint(2, 2);
+        var pointC = createPoint(-3, 4);
+
+        console.log("AB distance: " + calculateDistance(pointA, pointB));
+
+        var lineAB = createLine(pointA, pointB);
+        var lineBC = createLine(pointB, pointC);
+        var lineAC = createLine(pointA, pointC);
+
+        console.log("Can form triangle: " + canFormTriangle(lineAB, lineAC, lineBC));
+
+        function createPoint(x, y) {
+            return {
+                x: x,
+                y: y
+            };
+        }
+
+        function createLine(pointA, pointB) {
+            return {
+                pointA: pointA,
+                pointB: pointB
+            };
+        }
+
+        function calculateDistance(p1, p2) {
+            return Math.sqrt((p1.x - p2.x) * (p1.x - p2.x) + (p1.y - p2.y) * (p1.y - p2.y));
+        }
+
+        function canFormTriangle(lineA, lineB, lineC) {
+            if ((calculateDistance(lineA.pointA, lineA.pointB) + calculateDistance(lineB.pointA, lineB.pointB) > calculateDistance(lineC.pointA, lineC.pointB))
+                || (calculateDistance(lineB.pointA, lineB.pointB) + calculateDistance(lineC.pointA, lineC.pointB) > calculateDistance(lineA.pointA, lineA.pointB))
+                || (calculateDistance(lineA.pointA, lineA.pointB) + calculateDistance(lineC.pointA, lineC.pointB) > calculateDistance(lineB.pointA, lineB.pointB))) {
+                return true;
+            }
+            return false;
+        }
+    </script>
+</body>
+</html>

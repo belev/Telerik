@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+
+        function createPerson(firstName, lastName, age) {
+            return {
+                firstName: firstName,
+                lastName: lastName,
+                age: age,
+                toString: function () {
+                    return this.firstName + " " + this.lastName + " " + this.age + " years old";
+                }
+            };
+        }
+
+        function group(people, property) {
+            var groups = new Object();
+
+            for (var i in people) {
+                if (groups[people[i][property]] == undefined || groups[people[i][property]] == null) {
+                    // if for the moment there is no such property
+                    // create new array for people with this property
+                    groups[people[i][property]] = new Array();
+                }
+
+                // if there is such property, than add the current person in the array with this property
+                groups[people[i][property]].push(people[i]);
+            }
+
+            return groups;
+        }
+
+        var people = [
+            createPerson("pesho", "petrov", 31),
+            createPerson("stefan", "liubomirov", 55),
+            createPerson("pesho", "draganov", 15),
+            createPerson("gosho", "draganov", 15)
+        ];
+
+        var groupedFirstName = group(people, "firstName");
+        var groupedLastName = group(people, "lastName");
+        var groupedAge = group(people, "age");
+
+        console.log(groupedFirstName);
+        console.log(groupedLastName);
+        console.log(groupedAge);
+        console.log(groupedAge[15][1].toString());
+    </script>
+</body>
+</html>

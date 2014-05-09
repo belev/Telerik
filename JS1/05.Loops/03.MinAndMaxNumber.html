@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <label> Enter sequence with whitespace between numbers: </label>
+    <input type="text" id="sequence" />
+    <button onclick="showMinAndMax()"> Show min and max numbers: </button>
+
+    <script>
+
+        function showMinAndMax() {
+            var sequence = document.getElementById("sequence").value;
+            sequence = sequence.split(" ");
+
+            var flag = false;
+
+            for (var i in sequence) {
+                if (!isValidNumber(sequence[i])) {
+                    flag = true;
+                    console.log("There is invalid input number in the sequence");
+                }
+            }
+
+            if (flag == false) {
+                var min = parseFloat(sequence[0]);
+                var max = parseFloat(sequence[0]);
+
+                if (sequence.length > 1) {
+                    var curNumber = 0;
+                    for (var i = 1; i < sequence.length; i++) {
+                        curNumber = parseFloat(sequence[i]);
+
+                        if (curNumber > max) {
+                            max = curNumber;
+                        }
+
+                        if (curNumber < min) {
+                            min = curNumber;
+                        }
+                    }
+                }
+
+                console.log("Min and max numbers: " + min + " " + max);
+            }
+        }
+
+        function isValidNumber(number) {
+            if (isFinite(number)) {
+                return true;
+            }
+
+            return false;
+        }
+    </script>
+</body>
+</html>

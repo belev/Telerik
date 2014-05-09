@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+        for (var i = 0; i < 15; i++) {
+            var number = parseInt((Math.random() * 1000 + Math.random() * 10000), 10);
+
+            console.log("Number : " + number + " Last digit as word: " + showLastDigitAsWord(number));
+        }
+
+        function showLastDigitAsWord(number) {
+            var digitsAsWords = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
+
+            return digitsAsWords[number % 10];
+        }
+    </script>
+</body>
+</html>

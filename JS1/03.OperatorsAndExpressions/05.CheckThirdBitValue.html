@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Third bit value</title>
+</head>
+<body>
+    <label> Enter integer number: </label>
+    <input type="text" id="number" />
+    <button onclick="checkThirdBit()"> Check </button>
+
+    <script>
+        function checkThirdBit() {
+            var number = document.getElementById("number").value;
+
+            if (isValidIntNumber(number)) {
+
+                number = parseInt(number);
+
+                console.log("Bit at position 3 has value: " + ((number >> 3) & 1));
+            }
+            else {
+                console.log("Entered invalid number.");
+            }
+        }
+
+        function isValidIntNumber(number) {
+            if (parseInt(number) == parseFloat(number) && number < Number.MAX_VALUE && number > Number.MIN_VALUE) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

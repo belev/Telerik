@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <label> Enter sequence separated by whitespace: </label>
+    <input type="text" id="sequence" />
+    <button onclick="findMostFrequentNumber()"> Find most frequent number </button>
+
+    <script>
+        function findMostFrequentNumber() {
+            var sequence = document.getElementById("sequence").value;
+            sequence = sequence.split(" ");
+
+            var isValidSequence = true;
+
+            for (var i = 0; i < sequence.length; i++) {
+                if (isValidNumber(sequence[i])) {
+                    sequence[i] = parseFloat(sequence[i]);
+                }
+                else {
+                    isValidSequence = false;
+                    console.log("There is invalid entered number in the sequence.");
+                    break;
+                }
+            }
+
+            if (isValidSequence) {
+                var tmpCount = 0;
+                var maxCount = 0;
+                var mostFrequentNumber = Number.MIN_VALUE;
+
+                for (var i = 0; i < sequence.length; i++) {
+                    tmpCount = 0;
+
+                    for (var j = 0; j < sequence.length; j++) {
+                        if (sequence[i] == sequence[j]) {
+                            tmpCount++;
+                        }
+                    }
+
+                    if (maxCount < tmpCount) {
+                        maxCount = tmpCount;
+                        mostFrequentNumber = sequence[i];
+                    }
+                }
+
+                console.log("The most frequent number is " + mostFrequentNumber + " with frequency " + maxCount);
+            }
+        }
+
+        function isValidNumber(number) {
+            if (isFinite(number)) {
+                return true;
+            }
+
+            return false;
+        }
+    </script>
+</body>
+</html>

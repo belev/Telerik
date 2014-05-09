@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <label> Enter trapezoid side A: </label>
+    <input type="text" id="a" />
+
+    <label> Enter trapezoid side B: </label>
+    <input type="text" id="b" />
+
+    <label> Enter trapezoid height: </label>
+    <input type="text" id="height" />
+
+    <button onclick="calculateArea()"> Calculate area </button>
+
+    <script>
+        function calculateArea() {
+            var a = document.getElementById("a").value;
+            var b = document.getElementById("b").value;
+            var height = document.getElementById("height").value;
+
+            if (isValidNumber(a) && isValidNumber(b) && isValidNumber(height)) {
+                var area = (parseFloat(a) + parseFloat(b)) * parseFloat(height) / 2;
+
+                console.log("The trapezoid's area is: " + area);
+            }
+            else {
+                console.log("A, b or heigth is not valid number.")
+            }
+        }
+
+        function isValidNumber(number) {
+            if (parseInt(number) !== "NaN" && parseFloat(number) !== "Nan" && number < Number.MAX_VALUE && number > Number.MIN_VALUE) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <button onclick="showSmallestAndLargestProperties()"> Show document, window and navigator smallest and largest property </button>
+    <script>
+        function showSmallestAndLargestProperties() {
+            var navigatorSmallestProperty = findSmallestProperty(navigator);
+            var navigatorLargestProperty = findLargestProperty(navigator);
+
+            var windowSmallestProperty = findSmallestProperty(window);
+            var windowLargestProperty = findLargestProperty(window);
+
+            var documentSmallestProperty = findSmallestProperty(document);
+            var documentLargestProperty = findLargestProperty(document);
+
+            console.log("Navigator smallest and largest property: " + navigatorSmallestProperty + "   " + navigatorLargestProperty);
+            console.log("Window smallest and largest property: " + windowSmallestProperty + "   " + windowLargestProperty);
+            console.log("Document smallest and largest property: " + documentSmallestProperty + "   " + documentLargestProperty);
+        }
+
+        function findSmallestProperty(obj) {
+            var smallest = "zzzzz";
+
+            for (var prop in obj) {
+                if (prop < smallest) {
+                    smallest = prop;
+                }
+            }
+
+            return smallest;
+        }
+
+        function findLargestProperty(obj) {
+            var largest = "aaaaa";
+
+            for (var prop in obj) {
+                if (prop > largest) {
+                    largest = prop;
+                }
+            }
+
+            return largest;
+        }
+    </script>
+</body>
+</html>

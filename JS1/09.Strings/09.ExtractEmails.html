@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+        var text = "some text to test kalin@abv.bg if the extract of emails is correct identifier@host.info";
+
+        extractEmails(text);
+
+        function extractEmails(text) {
+            text = new String(text);
+
+            var regex = /\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b/ig;
+
+            var curEmail = regex.exec(text);
+
+            while (curEmail !== null) {
+                console.log(curEmail[0]);
+
+                curEmail = regex.exec(text);
+            }
+        }
+    </script>
+</body>
+</html>

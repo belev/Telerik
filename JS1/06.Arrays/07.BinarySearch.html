@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <label> Enter sorted sequence separated by whitespace: </label>
+    <input type="text" id="sequence" />
+    <br />
+
+    <label> Enter number: </label>
+    <input type="text" id="number" />
+    <br />
+
+    <button onclick="findNumberIndex()"> Find number index </button>
+
+    <script>
+        function findNumberIndex() {
+            var sequence = document.getElementById("sequence").value;
+            sequence = sequence.split(" ");
+
+            var numberToBeFound = document.getElementById("number").value;
+
+            var isValidNumberToBeFound = true;
+            if (!isValidNumber(numberToBeFound)) {
+                isValidNumberToBeFound = false;
+            }
+
+            var isValidSequence = true;
+
+            for (var i = 0; i < sequence.length; i++) {
+                if (isValidNumber(sequence[i])) {
+                    sequence[i] = parseFloat(sequence[i]);
+                }
+                else {
+                    isValidSequence = false;
+                    console.log("There is invalid entered number in the sequence.");
+                    break;
+                }
+            }
+
+            if (isValidSequence && isValidNumberToBeFound) {
+                numberToBeFound = parseFloat(numberToBeFound);
+
+                var left = 0;
+                var right = sequence.length;
+                var middle = parseInt((left + right) / 2, 10);
+
+                var indexOfWantedElement = -1;
+
+                var isFound = false;
+
+                while (left + 1 < right) {
+                    if (sequence[middle] > numberToBeFound) {
+                        right = middle;
+
+                        middle = parseInt((left + right) / 2, 10);
+                    }
+                    else if (sequence[middle] < numberToBeFound) {
+                        left = middle;
+
+                        middle = parseInt((left + right) / 2, 10);
+                    }
+                    else {
+                        isFound = true;
+                        indexOfWantedElement = middle;
+                        break;
+                    }
+                }
+
+                if (isFound) {
+                    console.log("The wanted element - > " + numberToBeFound + " is on position " + indexOfWantedElement);
+                }
+                else {
+                    console.log("There is no such element is the array");
+                }
+            }
+        }
+
+        function isValidNumber(number) {
+            if (isFinite(number)) {
+                return true;
+            }
+
+            return false;
+        }
+    </script>
+</body>
+</html>

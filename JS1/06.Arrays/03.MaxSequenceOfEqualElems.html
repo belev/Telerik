@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <label> Enter sequence separated by whitespace: </label>
+    <input type="text" id="sequence" />
+    <button onclick="findMaxSequence()"> Find max sequence </button>
+
+    <script>
+        function findMaxSequence() {
+            var sequence = document.getElementById("sequence").value;
+            sequence = sequence.split(" ");
+
+            var isValidSequence = true;
+
+            for (var i = 0; i < sequence.length; i++) {
+                if (isValidNumber(sequence[i])) {
+                    sequence[i] = parseFloat(sequence[i]);
+                }
+                else {
+                    isValidSequence = false;
+                    console.log("There is invalid entered number in the sequence.");
+                    break;
+                }
+            }
+
+            if (isValidSequence == true) {
+
+                var maxCount = 1;
+                var number = 0;
+
+                var curCount = 1;
+                var curNumber = sequence[0];
+
+                for (var i = 1; i < sequence.length; i++) {
+
+                    if (curNumber == sequence[i]) {
+                        curCount++;
+                    }
+                    else {
+                        curCount = 1;
+                        curNumber = sequence[i];
+                    }
+
+                    if (curCount > maxCount) {
+                        maxCount = curCount;
+                        number = curNumber;
+                    }
+                }
+
+                var result = "";
+
+                for (var i = 0; i < maxCount; i++) {
+                    result += number;
+
+                    if (i != maxCount - 1) {
+                        result += ", ";
+                    }
+                }
+
+                console.log(result);
+            }
+        }
+
+        function isValidNumber(number) {
+            if (isFinite(number)) {
+                return true;
+            }
+
+            return false;
+        }
+    </script>
+</body>
+</html>

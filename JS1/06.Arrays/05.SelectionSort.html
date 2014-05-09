@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <label> Enter sequence separated by whitespace: </label>
+    <input type="text" id="sequence" />
+    <button onclick="sortSequence()"> Sort sequence </button>
+
+    <script>
+        function sortSequence() {
+            var sequence = document.getElementById("sequence").value;
+            sequence = sequence.split(" ");
+
+            var isValidSequence = true;
+
+            for (var i = 0; i < sequence.length; i++) {
+                if (isValidNumber(sequence[i])) {
+                    sequence[i] = parseFloat(sequence[i]);
+                }
+                else {
+                    isValidSequence = false;
+                    console.log("There is invalid entered number in the sequence.");
+                    break;
+                }
+            }
+
+            if (isValidSequence) {
+                var smallestElemIndex, tmp;
+
+                for (var i = 0; i < sequence.length - 1; i++) {
+                    smallestElemIndex = i;
+
+                    for (var j = i + 1; j < sequence.length; j++) {
+                        if (sequence[j] < sequence[smallestElemIndex]) {
+                            smallestElemIndex = j;
+                        }
+                    }
+
+                    tmp = sequence[i];
+                    sequence[i] = sequence[smallestElemIndex];
+                    sequence[smallestElemIndex] = tmp;
+                }
+
+                console.log(sequence.join(", "));
+            }
+        }
+
+        function isValidNumber(number) {
+            if (isFinite(number)) {
+                return true;
+            }
+
+            return false;
+        }
+    </script>
+</body>
+</html>

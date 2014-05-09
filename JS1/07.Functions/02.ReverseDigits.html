@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+        for (var i = 0; i < 10; i++) {
+            var number = Math.floor((Math.random() * 1000000));
+
+            console.log("Number: " + number + " Reversed number: " + reverseDigits(number));
+        }
+
+        function reverseDigits(number) {
+            number = number.toString();
+
+            // with use of split the return type is array
+            // we use split in order to use reverse after that (use with arrays)
+            // and then to return it as a string use join
+            number = number.split("").reverse().join("");
+
+            // use it if there was some zeros at the end, and after reverse they are at the start of the number
+            if (number[0] == "0") {
+
+
+                // if the first symbol is zero, check if there is another leading zeros and count then
+                var count = 1;
+                for (var i = 1; i < number.length; i++) {
+                    if (number[i] == "0") {
+                        count++;
+                    }
+                    else {
+                        break;
+                    }
+                }
+
+                // after we count the leading zeros we get the substring from position with index count
+                number = number.substring(count);
+            }
+
+            return number;
+        }
+    </script>
+</body>
+</html>

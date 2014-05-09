@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <label> Enter a: </label>
+    <input type="text" id="a" />
+    <br />
+
+    <label> Enter b: </label>
+    <input type="text" id="b" />
+    <br />
+
+    <label> Enter c: </label>
+    <input type="text" id="c" />
+    <br />
+
+    <button onclick="quadraticEquationSolver()"> Find real roots </button>
+
+    <script>
+        function quadraticEquationSolver() {
+            var a = document.getElementById("a").value;
+            var b = document.getElementById("b").value;
+            var c = document.getElementById("c").value;
+
+            if (isValidNumber(a) && isValidNumber(b) && isValidNumber(c)) {
+                a = parseFloat(a);
+                b = parseFloat(b);
+                c = parseFloat(c);
+
+                if (a == 0) {
+                    var x = (-c) / b;
+                    console.log("The equation is linear and its root is: " + x);
+                }
+
+                else {
+                    var discriminant = (b * b) - 4 * a * c;
+
+                    if (discriminant > 0.0) {
+                        var x1 = (-b - Math.sqrt(discriminant)) / (2 * a);
+                        var x2 = (-b + Math.sqrt(discriminant)) / (2 * a);
+
+                        console.log("There are two real roots of the equation and they are: " + x1 + ", " + x2);
+                    }
+                    else if (discriminant == 0.0) {
+                        var x = (-b) / (2 * a);
+
+                        console.log("There is one var real root of the equation and it is: " + x);
+                    }
+                    else {
+                        console.log("There are no real roots of the equation");
+                    }
+                }
+            }
+            else {
+                console.log("Entered invalid coefficients.");
+            }
+        }
+
+        function isValidNumber(number) {
+            if (isFinite(number)) {
+                return true;
+            }
+
+            return false;
+        }
+    </script>
+</body>
+</html>

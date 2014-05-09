@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+        var text = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum gravida ligula lacus, in faucibus orci ipsum ac. Ipsum rhoncus Ipsum facilisis eleifend porta. Nulla eu nunc nibh. Vestibulum ut neque ac metus accumsan dignissim. Aliquam tempus urna odio, vitae mollis velit sollicitudin nec. In commodo elementum tempor. Donec rhoncus ante quis mauris lorem commodo. Lorem dolor justo, lacinia lorem nulla vitae, convallis egestas augue. Phasellus orci augue, suscipit ac neque a, ornare congue elit. Fusce at diam at tortor sodales lorem. Nulla ac mauris lacus. Curabitur lobortis lacinia lorem.';
+
+        var lorem = 'lorem';
+        var ipsum = 'Ipsum';
+
+        document.writeln("This is the test text:" + "<br>");
+        document.writeln(text + "<br>" + "<br>");
+
+        document.writeln("This is our words for searching:" + "<br>");
+        document.writeln(lorem + "<br>");
+        document.writeln(ipsum);
+
+        console.log("Case sensitive: lorem -> " + findOccurencesOfWord(text, lorem, true));
+
+        console.log("Case insensitive: lorem -> " + findOccurencesOfWord(text, lorem, false));
+
+        console.log("Case sensitive: Ipsum -> " + findOccurencesOfWord(text, ipsum, true));
+
+        console.log("Case insensitive: Ipsum -> " + findOccurencesOfWord(text, ipsum, false));
+
+        function findOccurencesOfWord(text, word, isCaseSensitive) {
+            isCaseSensitive = isCaseSensitive || false;
+
+            if (!isCaseSensitive) {
+                text = text.toLowerCase();
+                word = word.toLowerCase();
+            }
+
+            var startIndex = 0, occurences = 0;
+
+            while (startIndex < text.length) {
+
+                startIndex = text.indexOf(word, startIndex);
+
+                if (startIndex == -1) {
+                    break;
+                }
+                else {
+                    startIndex += word.length;
+                    occurences++;
+                }
+            }
+
+            return occurences;
+        }
+    </script>
+</body>
+</html>

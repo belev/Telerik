@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <label> Enter sequence separated by whitespace: </label>
+    <input type="text" id="sequence" />
+    <button onclick="findMaxIncreasingSequence()"> Find max increasing sequence </button>
+
+    <script>
+        function findMaxIncreasingSequence() {
+            var sequence = document.getElementById("sequence").value;
+            sequence = sequence.split(" ");
+
+            var isValidSequence = true;
+
+            for (var i = 0; i < sequence.length; i++) {
+                if (isValidNumber(sequence[i])) {
+                    sequence[i] = parseFloat(sequence[i]);
+                }
+                else {
+                    isValidSequence = false;
+                    console.log("There is invalid entered number in the sequence.");
+                    break;
+                }
+            }
+
+            if (isValidSequence == true) {
+
+                // how many number there are in the increasing sequence
+                var maxCount = 1;
+                // the last number in the sequence
+                var endNumber = 0;
+
+                var curCount = 1;
+                var curNumber = sequence[0];
+
+                for (var i = 1; i < sequence.length; i++) {
+
+                    // if the increasing statement is true, increase curCount and curNumber
+                    if (curNumber == sequence[i] - 1) {
+                        curCount++;
+                        curNumber++;
+                    }
+                    else {
+
+                        // if not, curCount is equal to 1
+                        // and curNumber become the current number from the sequence
+                        curCount = 1;
+                        curNumber = sequence[i];
+                    }
+
+                    // if curCount is greater, then maxCount = curCount and our endNumber = curNumber
+                    if (curCount > maxCount) {
+                        maxCount = curCount;
+                        endNumber = curNumber;
+                    }
+                }
+
+                var result = "";
+
+                for (var i = maxCount; i > 0; i--) {
+                    result += endNumber - i + 1;
+
+                    if (i != 1) {
+                        result += ", ";
+                    }
+                }
+
+                console.log(result);
+            }
+        }
+
+        function isValidNumber(number) {
+            if (isFinite(number)) {
+                return true;
+            }
+
+            return false;
+        }
+    </script>
+</body>
+</html>

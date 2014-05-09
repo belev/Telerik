@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>In circle out of rectangle</title>
+</head>
+<body>
+    <label> Enter x pos: </label>
+    <input type="text" id="x" />
+
+    <label> Enter y pos: </label>
+    <input type="text" id="y" />
+
+    <button onclick="checkPoint()"> Check point </button>
+
+    <script>
+        function checkPoint() {
+            var x = document.getElementById("x").value;
+            var y = document.getElementById("y").value;
+
+            x = parseFloat(x);
+            y = parseFloat(y);
+
+            var circleCenterX = 1;
+            var circleCenterY = 1;
+            var circleRadius = 3;
+
+            var rectTop = 1;
+            var rectLeft = -1;
+            var rectWidth = 6;
+            var rectHeight = 2;
+
+            if (isInCircle(x, y, circleCenterX, circleCenterY, circleRadius) && isOutsideRectangle(x, y, rectTop, rectLeft, rectWidth, rectHeight)) {
+                console.log("The point is within the circle and outside the rectangle.");
+            }
+            else {
+                console.log("The point is within the rectangle or outside the circle.")
+            }
+        }
+
+        function isInCircle(x, y, centerX, centerY, radius) {
+            var dist2 = (x - centerX) * (x - centerX) + (y - centerY) * (y - centerY);
+
+            if (dist2 <= (radius * radius)) {
+                return true;
+            }
+
+            return false;
+        }
+
+        function isOutsideRectangle(x, y, top, left, width, height) {
+            if (x < left || x > (left + width) || y < (top - height) || y > top) {
+                return true;
+            }
+
+            return false;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+        var html = '<p>Please visit <a href="http://academy.telerik. com">our site</a> to choose a training course. Also visit <a href="www.devbg.org">our forum</a> to discuss the courses.</p>';
+
+        console.log(replaceAnchorTags(html));
+
+        function replaceAnchorTags(html) {
+            html = new String(html);
+
+            // <a \s* -> (matches whitespace, tab which occurs zero or more times) href= (.*?) -> (means within) \s* > (.*?) <\/a> /ig -> (it will do a global insensitive search)
+            html = html.replace(/<a\s*href=(.*?)\s*>(.*?)<\/a>/ig, '[URL=$1]$2[/URL]');
+            
+            return html;
+        }
+    </script>
+</body>
+</html>

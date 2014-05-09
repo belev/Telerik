@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title> Odd or even </title>
+</head>
+<body>
+    <label> Enter integer number: </label>
+    <input type="text" id="entered-number" />
+    <button onclick="oddOrEven()"> Check number </button>
+
+    <script>
+        function oddOrEven() {
+            var number = document.getElementById("entered-number").value;
+
+            if (isValidIntNumber(number)) {
+                number = parseInt(number);
+
+                if (number % 2 == 0) {
+                    console.log(number + " is even number");
+                }
+                else {
+                    console.log(number + " is odd number");
+                }
+            }
+            else {
+                console.log("Not a valid number");
+            }
+        }
+
+        function isValidIntNumber(number) {
+            if (parseInt(number) == parseFloat(number) && number < Number.MAX_VALUE && number > Number.MIN_VALUE) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

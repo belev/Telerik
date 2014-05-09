@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <label> Enter integer number: </label>
+    <input type="text" id="number" />
+    <button onclick="showNumberAsText()"> Show number as text </button>
+
+    <script>
+        function showNumberAsText() {
+
+            var units = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
+            var tensFromTenToTwenty = ["ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"];
+            var tens = ["twenty", "thirty", "fourty", "fifty", "sixty", "seventy", "eighty", "ninety"];
+
+            var number = document.getElementById("number").value;
+
+            if (isValidNumber(number)) {
+                number = parseInt(number);
+
+                var firstDigit = parseInt(number / 100);
+                var secondDigit = (parseInt(number / 10)) % 10;
+                var thirdDigit = number % 10;
+
+                var numberAsText = "";
+
+                if (number >= 100) {
+                    numberAsText += units[firstDigit] + " hundred ";
+
+                    if (secondDigit > 1) {
+                        if (thirdDigit != 0) {
+                            numberAsText += tens[secondDigit - 2] + " " + units[thirdDigit];
+                        }
+                        else {
+                            numberAsText += tens[secondDigit - 2];
+                        }
+                    }
+                    else if (secondDigit == 1) {
+                        numberAsText += "and " + tensFromTenToTwenty[thirdDigit];
+                    }
+                    else {
+                        if (thirdDigit != 0) {
+                            numberAsText += "and " + units[thirdDigit];
+                        }
+                    }
+                }
+                else {
+                    if (secondDigit > 1) {
+                        if (thirdDigit != 0) {
+                            numberAsText += tens[secondDigit - 2] + " " + units[thirdDigit];
+                        }
+                        else {
+                            numberAsText += tens[secondDigit - 2];
+                        }
+                    }
+                    else if (secondDigit == 1) {
+                        numberAsText += tensFromTenToTwenty[thirdDigit];
+                    }
+                    else {
+                        numberAsText += units[thirdDigit];
+                    }
+                }
+
+                console.log(numberAsText);
+            }
+            else {
+                console.log("Invalid entered number.");
+            }
+        }
+
+        function isValidNumber(digit) {
+            if (parseInt(digit) == parseFloat(digit) && digit <= 999 && digit >= 0) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

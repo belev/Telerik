@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id='list-item'>
+    <strong>-{name}-</strong> <span>-{age}-</span>
+</div>
+
+<script>
+    function generateList(people, template) {
+        var result = '<ul>';
+
+        people.forEach(function (person) {
+            result += '<li>';
+
+            result += template.replace(/-\{(.*?)\}-/g, function (match, p1) {
+                return person[p1]
+            });
+
+            result += '</li>';
+        });
+
+        result += '</ul>';
+
+        return result
+    }
+
+    function Person(name, age) {
+        return {
+            name: name,
+            age: age
+        };
+    }
+
+    var people =
+            [
+                new Person('Gancho', 80),
+                new Person('Pesho', 10),
+                new Person('Gosho', 50),
+                new Person('Mariika', 21),
+                new Person('Dancho', 90),
+                new Person('Anna', 9),
+                new Person('Gogo', 4),
+                new Person('Ala bala portokala', 0)
+            ];
+
+    var template = document.getElementById('list-item');
+
+    template.outerHTML = generateList(people, template.innerHTML)
+</script>
+</body>
+</html>

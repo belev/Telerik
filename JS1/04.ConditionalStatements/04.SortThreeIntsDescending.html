@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <label> Enter first number: </label>
+    <input type="text" id="first-number" />
+    <br />
+
+    <label> Enter second number: </label>
+    <input type="text" id="second-number" />
+    <br />
+
+    <label> Enter third number: </label>
+    <input type="text" id="third-number" />
+    <br />
+
+    <button onclick="sortDescending()"> Check product sign </button>
+
+    <script>
+        function sortDescending() {
+            var firstNumber = document.getElementById("first-number").value;
+            var secondNumber = document.getElementById("second-number").value;
+            var thirdNumber = document.getElementById("third-number").value;
+
+            if (isValidIntNumber(firstNumber) && isValidIntNumber(secondNumber) && isValidIntNumber(thirdNumber)) {
+                firstNumber = parseFloat(firstNumber);
+                secondNumber = parseFloat(secondNumber);
+                thirdNumber = parseFloat(thirdNumber);
+
+                //Find the smallest number
+                var smallestOfThree = firstNumber;
+
+                if (smallestOfThree > secondNumber || smallestOfThree > thirdNumber) {
+                    if (smallestOfThree > thirdNumber) {
+                        smallestOfThree = thirdNumber;
+                    }
+
+                    if (smallestOfThree > secondNumber) {
+                        smallestOfThree = secondNumber;
+                    }
+                }
+
+                //after finding the smallest number, the smallest number go to last position
+                if (smallestOfThree == firstNumber) {
+                    var tmp = firstNumber;
+                    firstNumber = thirdNumber;
+                    thirdNumber = tmp;
+                }
+
+                else if (smallestOfThree == secondNumber) {
+                    var tmp = secondNumber;
+                    secondNumber = thirdNumber;
+                    thirdNumber = tmp;
+                }
+
+                //Sort in descending order the first two numbers
+                if (firstNumber < secondNumber) {
+                    var tmp = secondNumber;
+                    secondNumber = firstNumber;
+                    firstNumber = tmp;
+                }
+
+                console.log("The numbers in descending order: " + firstNumber + ", " + secondNumber + ", " + thirdNumber);
+
+            }
+            else {
+                console.log("Invalid entered number.");
+            }
+        }
+
+        function isValidIntNumber(number) {
+            if (isFinite(number)) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
