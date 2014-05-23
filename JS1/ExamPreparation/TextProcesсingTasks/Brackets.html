@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    function Solve(args) {
+        function addIndentationString(count, indentString) {
+            var i, resultWithIndentation = new String();
+            indentString = indentString.trim();
+
+            for (i = 0; i < count; i++) {
+                resultWithIndentation += indentString;
+            }
+
+            if (arguments.length > 2) {
+                resultWithIndentation += arguments[2].trim();
+            }
+
+            return resultAsArray.push(resultWithIndentation.trim());
+        }
+
+        function processLine(inputLine) {
+            var codeToAdd = new String();
+            var isFirstWhitespace = true;
+
+            inputLine = inputLine.trim();
+            for (var i = 0; i < inputLine.length; i++) {
+                if (inputLine[i] === '{') {
+                    addIndentationString(indentationsCount, indentationString, '{');
+                    indentationsCount++;
+                }
+                else if (inputLine[i] === '}') {
+                    indentationsCount--;
+                    addIndentationString(indentationsCount, indentationString, '}');
+                }
+                else {
+                    while (i < inputLine.length && inputLine[i] !== '{' && inputLine[i] !== '}') {
+                        if (inputLine[i] === ' ' && isFirstWhitespace === false) {
+                            i++;
+                            continue;
+                        }
+
+                        if (inputLine[i] === ' ') {
+                            if (isFirstWhitespace === true) {
+                                isFirstWhitespace = false;
+                            }
+                        }
+                        else {
+                            isFirstWhitespace = true;
+                        }
+
+                        codeToAdd += inputLine[i];
+                        i++;
+                    }
+                    i--;
+
+                    if ((codeToAdd === null || codeToAdd.match(/^ *&/) !== null || this === '') === false) {
+                        addIndentationString(indentationsCount, indentationString, codeToAdd);
+                    }
+
+                    codeToAdd = new String();
+                }
+            }
+        }
+
+        var numberOfLines = parseInt(args[0]),
+                indentationString = args[1],
+                resultAsArray = [],
+                i,
+                line,
+                indentationsCount = 0,
+                result = new String();
+
+        for (i = 0; i < numberOfLines; i++) {
+            line = args[i + 2];
+
+            processLine(line);
+        }
+
+
+        for (i = 0; i < resultAsArray.length; i++) {
+            result += resultAsArray[i];
+
+            if (i != resultAsArray.length - 1) {
+                result += '\r\n';
+            }
+        }
+        return result;
+    }
+
+    (function () {
+        var tests = [
+            [
+                '3',
+                '>>',
+                '{a{',
+                ' }',
+                '}',
+            ],
+            [
+                ' 5',
+                '....',
+                'using System;    namespace Stars',
+                '{class Program{',
+                ' static    string[] separators',
+                ' = new string[] { " " };}',
+                '}',
+            ],
+            [
+                '2',
+                '..',
+                '{ a()  ){sa}{dsdas}}{!{{adasds{a}}',
+                '}{}}',
+            ],
+            [
+                '1',
+                ' __',
+                '  {}{}{}{}{}{}{}{}{{{}{}{}{}}}',
+            ],
+            [
+                '5',
+                '|  |',
+                '#include "stdafx.h"',
+                'class Point',
+                '{public:double x, y;Point(double x, double y){this->x = x;this->y = y;}};',
+                ' int _tmain(int argc, _TCHAR* argv[])',
+                '{Point a = Point(5, 10) a = Point(7,8);return 0;}',
+
+            ],
+            [
+                ' 20',
+                ' |  |',
+                '#include "stdafx.h"',
+                ' class Point',
+                ' {public:double x, y;Point(double x, double y){this->x = x;this->y = y;}};',
+                ' int _tmain(int argc, _TCHAR* argv[])',
+                '  {Point a = Point(5, 10) a = Point(7,8);return 0;}',
+                '#include "stdafx.h"',
+                ' class Point',
+                ' {public:double x, y;Point(double x, double y){this->x = x;this->y = y;}};',
+                '  int _tmain(int argc, _TCHAR* argv[])',
+                '  {Point a = Point(5, 10) a = Point(7,8);return 0;}',
+                '#include "stdafx.h"',
+                '  class Point',
+                '  {public:double x, y;Point(double x, double y){this->x = x;this->y = y;}};',
+                ' int _tmain(int argc, _TCHAR* argv[])',
+                '  {Point a = Point(5, 10) a = Point(7,8);return 0;}',
+                '#include "stdafx.h"',
+                'class Point',
+                ' {public:double x, y;Point(double x, double y){this->x = x;this->y = y;}};',
+                ' int _tmain(int argc, _TCHAR* argv[])',
+                ' {Point a = Point(5, 10) a = Point(7,8);return 0;}',
+            ]
+        ];
+
+        for(var i = 0; i < tests.length; i++){
+            console.log(Solve(tests[i]));
+        }
+    }());
+</script>
+</body>
+</html>

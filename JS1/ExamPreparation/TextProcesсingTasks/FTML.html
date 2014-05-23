@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    function Solve(args) {
+        function processLine(line) {
+            var openedTags = [];
+            var applyTagsText = [];
+            var textToApplyTagsTo = '';
+            var textToAddToOutput = '';
+
+            for (var i = 0; i < line.length; i++) {
+                if (line[i] === '<' && i + 1 < line.length) {
+
+                    var indexOfClosingBracket = line.indexOf('>', i);
+                    if (line[i + 1] !== '/') {
+
+                        var tag = line.substring(i + 1, indexOfClosingBracket);
+
+                        if (tag === 'del') {
+                            i = line.indexOf('</del>', i) + 5;
+                            continue;
+                        }
+
+                        openedTags.push(tag);
+
+                        if (textToApplyTagsTo.length !== 0) {
+                            applyTagsText.push(textToApplyTagsTo);
+                            textToApplyTagsTo = '';
+                        }
+
+                        i = indexOfClosingBracket;
+                        continue;
+                    }
+                    else {
+                        if (applyTagsText.length > 0) {
+                            textToApplyTagsTo += applyTagsText.pop();
+                        }
+
+                        textToApplyTagsTo = applyTags(openedTags, textToApplyTagsTo);
+
+                        if (openedTags.length === 0) {
+                            textToAddToOutput += textToApplyTagsTo;
+                            textToApplyTagsTo = '';
+                        }
+
+                        i = indexOfClosingBracket;
+                        continue;
+                    }
+                }
+
+                else {
+                    if (openedTags.length !== 0) {
+                        textToApplyTagsTo += line[i];
+                    }
+                    else {
+                        textToAddToOutput += line[i];
+                    }
+                }
+            }
+            textToAddToOutput += textToApplyTagsTo;
+            return textToAddToOutput;
+        }
+
+        function applyTags(tags, text) {
+            var currentTag = tags.pop();
+
+            if (currentTag === 'upper') {
+                text = text.toUpperCase();
+            }
+            else if (currentTag === 'lower') {
+                text = text.toLowerCase();
+            }
+            else if (currentTag === 'rev') {
+                text = text.split('').reverse().join('');
+            }
+            else if (currentTag === 'toggle') {
+                var toggledText = '';
+                for (var i = 0; i < text.length; i++) {
+
+                    if (text[i] >= 'A' && text[i] <= 'Z') {
+                        toggledText += text[i].toLowerCase();
+                    }
+                    else if (text[i] >= 'a' && text[i] <= 'z') {
+                        toggledText += text[i].toUpperCase();
+                    }
+                    else{
+                        toggledText += text[i];
+                    }
+                }
+                text = toggledText;
+            }
+
+            return text;
+        }
+
+        var numberOfLines = parseInt(args[0]),
+                i,
+                line,
+                resultOutput = '',
+                lineToAdd = '';
+
+        for (i = 1; i <= numberOfLines; i++) {
+            line = args[i];
+
+            lineToAdd = processLine(line);
+
+            resultOutput += lineToAdd;
+
+            if (i !== numberOfLines && lineToAdd !== '') {
+                resultOutput += '\r\n';
+            }
+        }
+        return resultOutput;
+    }
+
+    (function () {
+        var tests =
+                [
+                    [
+                        '2',
+                        'So<rev><upper>saw</upper> txet em</rev>',
+                        '<lower><upper>here</upper></lower>',
+                    ],
+                    [
+                        '3',
+                        '<toggle><rev>ERa</rev></toggle> you',
+                        '<rev>noc</rev><lower>FUSED</lower>',
+                        '<rev>?<rev>already </rev></rev>',
+
+                    ],
+                    [
+                        '1',
+                        ' <del><rev><rev>here</rev></rev><del>nothing</del>still nothing</del><upper><del>nothing</del><rev>emos</rev><del>some</del>thing</upper>'
+
+                    ]
+                    ,
+                    [
+                        '1',
+                        "some plain text and a <rev>rev going to a new line</rev> with also an <upper>uppercaseon a new line</upper> and a <toggle>tOGGLECASEon a new line</toggle> plus a <lower>lower with <upper>upper</upper> nested</lower> and a <del>del on a new line</del> which you don't see cause it's deleted"
+                    ],
+                ];
+        //console.log(Solve(tests[0]));
+        console.log(Solve(tests[3]));
+    }())
+</script>
+</body>
+</html>

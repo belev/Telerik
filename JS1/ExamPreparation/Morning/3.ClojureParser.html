@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    function Solve(args) {
+        function processLine(line, allFunctions) {
+            var index = 0;
+
+            var defIndex = line.indexOf('def', index);
+            if (defIndex !== -1) {
+                var indexOfFirstWhitespaceAfterDef = line.indexOf(' ', defIndex + 1);
+                var indexOfWhitespaceAfterFuncName = line.indexOf(' ', indexOfFirstWhitespaceAfterDef + 1);
+
+                var functionName = line.substring(defIndex + indexOfFirstWhitespaceAfterDef, indexOfWhitespaceAfterFuncName).trim();
+                index = indexOfWhitespaceAfterFuncName;
+
+                line = line.substring(index, line.length);
+                // console.log(funcValue);
+
+                var functionValue = getFunctionValue(line, allFunctions);
+                if (functionValue === 'division by zero') {
+                    return 'division by zero';
+                }
+                else {
+                    allFunctions[functionName] = functionValue;
+                }
+            }
+            else {
+                return processOperator(line[0], line, allFunctions);
+            }
+        }
+
+        function getFunctionValue(funcValueInfo, allFunctions) {
+            funcValueInfo = funcValueInfo.trim();
+            funcValueInfo = funcValueInfo.split(/\s+/g);
+            // console.log(operatorExpression);
+
+            if (funcValueInfo.length === 1) {
+                if (isNaN(parseInt(funcValueInfo[0]))){
+                    return parseInt(allFunctions[funcValueInfo[0]]);
+                }
+
+                return parseInt(funcValueInfo[0]);
+            }
+            else {
+                var operator = funcValueInfo[0][1];
+                if (operator === undefined) {
+                    operator = funcValueInfo[0];
+                }
+                funcValueInfo.shift();
+
+                return processOperator(operator, funcValueInfo, allFunctions);
+            }
+        }
+
+        function processOperator(operator, params, allFunctions) {
+            var result;
+            if (isNaN(parseInt(params[0]))) {
+                result = allFunctions[params[0]];
+            }
+            else {
+                result = parseInt(params[0]);
+            }
+
+            for (var i = 1; i < params.length; i++) {
+                if (operator === '*') {
+                    if (isNaN(parseInt(params[i])) && params[i] !== ')') {
+                        result *= allFunctions[params[i]];
+                    }
+                    else {
+                        result *= parseInt(params[i]);
+                    }
+                }
+                else if (operator === '/') {
+                    if (isNaN(parseInt(params[i])) && params[i] !== ')') {
+                        result /= allFunctions[params[i]];
+                    }
+                    else {
+                        result /= parseInt(params[i]);
+                    }
+
+                    if (isNaN(result) || result === Infinity) {
+                        return 'division by zero';
+                    }
+                }
+                else if (operator === '-') {
+                    if (isNaN(parseInt(params[i])) && params[i] !== ')') {
+                        result -= allFunctions[params[i]];
+                    }
+                    else {
+                        result -= parseInt(params[i]);
+                    }
+                }
+                else if (operator === '+') {
+                    if (isNaN(parseInt(params[i])) && params[i] !== ')') {
+                        result += allFunctions[params[i]];
+                    }
+                    else {
+                        result += parseInt(params[i]);
+                    }
+                }
+            }
+            return result;
+        }
+
+        // text = text.replace(/\s+/g, ' ').trim();
+
+        var allFunctions = [];
+        var input = new Array(args),
+                lineNumber;
+
+        for (lineNumber = 0; lineNumber < input[0].length; lineNumber++) {
+            var line = new String(input[0][lineNumber].trim());
+            line = line.replace(/\)/g, ' ');
+            line = line.replace(/\s+/g, ' ').trim();
+
+            line = line.substr(1, args[lineNumber].length - 2);
+
+            //console.log(line);
+
+            if (processLine(line, allFunctions) === 'division by zero') {
+                var num = lineNumber + 1;
+                return 'Division by zero! At Line:' + num;
+            }
+
+            if (lineNumber === input[0].length - 1) {
+                if (getFunctionValue(line, allFunctions) === 'division by zero') {
+                    var num = lineNumber + 1;
+                    return 'Division by zero! At Line:' + num;
+                }
+                else {
+                    return getFunctionValue(line, allFunctions);
+                }
+            }
+        }
+    }
+    (function () {
+        var tests = [
+            [
+                '                  (def func 10)',
+                ' (def newFunc (+  func 2))',
+                '       (               def sumFunc (+ func func newFunc 0 0 0            )                  )',
+                ' (* sumFunc 2)',
+            ],
+            [
+                '(def func (+ 5 2))',
+                ' (def func2 (/  func 5 2 1 0              )                )',
+                '  (def func3 (            / func 2)          )',
+                ' (+ func3 func)',
+            ],
+            [
+                '(def     go6o    -7 )',
+                '(def pe6o (   /  -15 go6o))',
+                '(def asD (/ 2 0))',
+                '(def func2 asD  )',
+                '(           +        4          2      func2)'],
+            [
+                '(def     go6o    -7 )',
+                '(def asd (/ 0 5))',
+                '(def func2 asd  )',
+                '(           +        4          2      func2)']
+        ];
+        console.log(Solve(tests[tests.length - 1]));
+    })()
+</script>
+</body>
+</html>

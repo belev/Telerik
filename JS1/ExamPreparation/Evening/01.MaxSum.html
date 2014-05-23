@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+
+    <script>
+        function Solve(params) {
+            var maxSum = -2000001;
+
+            var n = parseInt(params[0]);
+
+            var sequence = [];
+
+            for (var i = 0; i < n; i++) {
+                sequence[i] = parseInt(params[i + 1]);
+            }
+
+            var curSum = 0;
+            for (var i = 0; i < n; i++) {
+                curSum += sequence[i];
+
+                if (maxSum < curSum) {
+                    maxSum = curSum;
+                }
+
+                if (curSum < 0) {
+                    curSum = 0;
+                }
+            }
+
+            return maxSum;
+        }
+
+        (function () {
+            var tests = [
+                [
+                    8,
+                    1,
+                    6,
+                    -9,
+                    4,
+                    4,
+                    -2,
+                    10,
+                    -1
+                ],
+                [
+                    6,
+                    1,
+                    3,
+                    -5,
+                    8,
+                    7,
+                    -6
+                ],
+                [
+                    9,
+                    -9,
+                    -8,
+                    -8,
+                    -7,
+                    -6,
+                    -5,
+                    -1,
+                    -7,
+                    -6
+                ],
+
+            ];
+
+            for (var i = 0; i < tests.length; i++) {
+                console.log(Solve(tests[i]));
+            }
+        })();
+    </script>
+</head>
+
+<body>
+</body>
+</html>

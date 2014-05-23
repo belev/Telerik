@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    function Solve(args) {
+        function Position(posX, posY) {
+            return {
+                x: posX,
+                y: posY
+            };
+        }
+
+        function isValidPosition(position, n, m) {
+            return position.x >= n || position.y >= m || position.x < 0 || position.y < 0;
+        }
+
+        var nMJ = args[0].split(' ');
+
+        var n = parseInt(nMJ[0]), m = parseInt(nMJ[1]), jumpsCount = parseInt(nMJ[2]);
+
+
+        var rawStartingPos = args[1].split(' ');
+
+        var position = new Position(parseInt(rawStartingPos[0]), parseInt(rawStartingPos[1]));
+
+        var matrix = [];
+        for (var i = 0; i < n; i++) {
+            matrix[i] = [];
+        }
+
+        var numberOfJumps = 0;
+        var sumOfNumbers = 0;
+
+        while (true) {
+            for (var i = 2; i < jumpsCount + 2; i++) {
+                if (isValidPosition(position, n, m) === true) {
+                    return 'escaped ' + sumOfNumbers;
+                }
+                if (matrix[position.x][position.y] === true) {
+                    return 'caught ' + numberOfJumps;
+                }
+
+
+                matrix[position.x][position.y] = true;
+                numberOfJumps++;
+                sumOfNumbers += position.x * m + position.y + 1;
+
+                var jumpInfo = args[i].split(' ');
+
+                position.x += parseInt(jumpInfo[0]);
+                position.y += parseInt(jumpInfo[1]);
+            }
+        }
+    }
+    (function () {
+        var tests = ['6 7 3', '0 0', '2 2', '-2 2', '3 -1'];
+
+        console.log(Solve(tests));
+    })()
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    function Solve(args) {
+        var n = parseInt(args[0]);
+
+        var subsequencesCount = 1;
+
+        for (var i = 1; i < n; i++) {
+            var number = parseInt(args[i]);
+            var nextNumber = parseInt(args[i + 1]);
+
+            if (number > nextNumber) {
+                subsequencesCount++;
+            }
+        }
+
+        return subsequencesCount;
+    }
+
+    (function () {
+        var tests = [
+            [7, 1, 2, -3, 4, 4, 0, 1],
+            [6, 1, 3, -5, 8, 7, -6],
+            [9, 1, 8, 8, 7, 6, 5, 7, 7, 6]
+        ];
+
+        for (var i = 0; i < 3; i++) {
+            console.log(Solve(tests[i]));
+        }
+    })()
+
+</script>
+</body>
+</html>

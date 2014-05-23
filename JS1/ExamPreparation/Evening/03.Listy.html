@@ -1,0 +1,213 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script>
+        function Solve(params) {
+            function DefineVariable(line) {
+
+                var openBracketIndex = line.indexOf("[");
+
+                var endIndex = Math.min(line.indexOf(" "), openBracketIndex);
+
+                if (endIndex == -1) {
+                    endIndex = openBracketIndex;
+                }
+
+                var variableName = line.substring(0, endIndex);
+                // console.log(variableName);
+
+                var otherVariableInfo = line.substring(endIndex).trim();
+
+                openBracketIndex = otherVariableInfo.indexOf("[");
+
+                if (openBracketIndex == 0) {
+                    var variableSequence = GetSequenceFromString(otherVariableInfo);
+
+                    return CreateVariable(variableName, variableSequence);
+                }
+                else {
+                    var commandName = otherVariableInfo.substr(0, 3);
+                    otherVariableInfo = otherVariableInfo.substring(3);
+
+                    var variableValue = ProcessCommand(commandName, otherVariableInfo);
+
+                    return CreateVariable(variableName, variableValue);
+                }
+            }
+
+            function GetSequenceFromString(variableInfo) {
+                variableInfo = variableInfo.substring(1, variableInfo.length - 1);
+
+                variableInfo = variableInfo.split(',');
+
+                var variableSequence = [];
+                for (var i = 0; i < variableInfo.length; i++) {
+                    variableInfo[i] = variableInfo[i].trim();
+
+                    if (isNaN(variableInfo[i]) == true) {
+                        var elements = variables[variableInfo[i]];
+
+                        if (elements.length > 0) {
+                            for (var j = 0; j < elements.length; j++) {
+                                variableSequence.push(variables[variableInfo[i]][j]);
+                            }
+                        }
+                        else {
+                            variableSequence.push(elements);
+                        }
+                    }
+                    else {
+                        variableSequence.push(parseInt(variableInfo[i]));
+                    }
+                }
+
+                return variableSequence;
+            }
+
+            function ProcessCommand(commandName, variableInfo) {
+                var variableSequence = GetSequenceFromString(variableInfo);
+
+                var variableValue;
+                // min, max, average, sum
+                if (commandName == "min") {
+                    variableValue = variableSequence.min();
+                }
+                else if (commandName == "max") {
+                    variableValue = variableSequence.max();
+                }
+                else if (commandName == "sum") {
+                    variableValue = variableSequence.sum();
+                }
+                else if (commandName == "avg") {
+                    variableValue = variableSequence.avg();
+                }
+
+                return variableValue;
+            }
+
+            Array.prototype.min = function () {
+                var min = 2000000;
+                for (var i = 0; i < this.length; i++) {
+                    if (min > this[i]) {
+                        min = this[i];
+                    }
+                }
+
+                return min;
+            }
+
+            Array.prototype.max = function () {
+                var max = -2000000;
+                for (var i = 0; i < this.length; i++) {
+                    if (max < this[i]) {
+                        max = this[i];
+                    }
+                }
+
+                return max;
+            }
+
+            Array.prototype.sum = function () {
+                var sum = 0;
+                for (var i = 0; i < this.length; i++) {
+                    sum += this[i];
+                }
+
+                return sum;
+            }
+
+            Array.prototype.avg = function () {
+
+                return Math.floor(this.sum() / this.length);
+            }
+
+            function CreateVariable(name, value) {
+                return {
+                    name: name,
+                    value: value
+                };
+            }
+
+            variables = [];
+
+            for (var index in params) {
+                var func = params[index].trim();
+
+                if (func.indexOf("def") == 0) {
+                    var variableInfo = func.substring(3).trim();
+
+                    var variable = DefineVariable(variableInfo);
+
+                    variables[variable.name] = variable.value;
+                    // console.log(variables)
+                }
+                else {
+                    if (func[0] != "[") {
+                        func = func.substr(0, 3) + " " + func.substr(3);
+                    }
+
+                    var result = DefineVariable(func);
+
+                    if (result.name == "avg") {
+                        // console.log(result.value.avg());
+                        return result.value.avg();
+                    }
+                    else if (result.name == "min") {
+                        // console.log(result.value.min());
+                        return result.value.min();
+                    }
+                    else if (result.name == "max") {
+                        // console.log(result.value.max());
+                        return result.value.max();
+                    }
+                    // console.log(result.value.sum());
+                    return result.value.sum();
+                }
+            }
+        }
+
+
+
+        (function () {
+            var tests = [
+                            ["def func sum[5, 3, 7, 2, 6, 3]",
+                            "def func2 [5, 3, 7, 2, 6, 3]",
+                            "def func3 min[func2]",
+                            "def func4 max[5, 3, 7, 2, 6, 3]",
+                            "def func5 avg[5, 3, 7, 2, 6, 3]",
+                            "def func6 sum[func2, func3, func4 ]",
+                            "sum[func6, func4]"],
+                            [
+                                "def func sum[1, 2, 3, -6]",
+            "def newList [func, 10, 1]",
+            "def newFunc sum[func, 100, newList]",
+            "[newFunc]"
+
+                            ],
+                            [
+            "                    def definition[-100, -100, -100]         ",
+            "def definitionResult sum[definition]                         ",
+            "def defTest sum[definitionResult, 6457457, 2345234, -234546] ",
+            "avg[defTest, 1, 2, 3]                                        ",
+                            ],
+
+                            [
+                            "def maxy max[100]                 ",
+"def summary [0]                   ",
+"combo [maxy, maxy,maxy,maxy, 5,6] ",
+"summary sum[combo, maxy, -18000]  ",
+"def pe6o avg[summary,maxy]        ",
+"sum[7, pe6o]                      ",
+                            ]
+
+            ];
+
+            // var tests = ["def func6 sum[func2, func3, func4 ]", "def func3 min[func2]"];
+            Solve(tests[3]);
+        })();
+    </script>
+</head>
+<body>
+</body>
+</html>
