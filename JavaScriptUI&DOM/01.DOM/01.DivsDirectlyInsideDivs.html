@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="01.DivsDirectlyInsideDivs.js"></script>
+</head>
+<body>
+<div id="wrapper">
+    <div>
+        <div>
+            <section>
+                <article>
+                    <div>
+                        content 1
+                        <div>
+                            content 1.1
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <p>
+                                Article footer
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            </section>
+            <footer>
+                <h2>
+                    Site footer
+                </h2>
+            </footer>
+        </div>
+    </div>
+</div>
+<script>
+    var getDivsModule = getAllDivsDirectlyInsideOtherDivsModule;
+
+    var divsByQueryAnswer = getDivsModule.byQuerySelector();
+    console.log(divsByQueryAnswer);
+    console.log('^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^');
+
+    var divsByTagNameAnswer = getDivsModule.byTagName(document.getElementsByTagName('div'));
+    console.log(divsByTagNameAnswer);
+</script>
+</body>
+</html>
