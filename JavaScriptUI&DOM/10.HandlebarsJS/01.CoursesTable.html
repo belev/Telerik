@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="01.CoursesTable.css">
+</head>
+<body>
+<div id="container">
+
+</div>
+<script src="handlebars-v1.3.0.js"></script>
+
+<script type="text/x-handlebars-template" id="post-template">
+    <table id="courses-information">
+        <tr>
+            <th>№</th>
+            <th>Title</th>
+            <th>Date #1</th>
+            <th>Date #2</th>
+        </tr>
+
+        {{#each courses}}
+        <tr class="course-info">
+            <td class="course-number">{{number}}</td>
+            <td class="course-title">{{title}}</td>
+            <td class="course-first-date">{{firstDate}}</td>
+            <td class="course-second-date">{{secondDate}}</td>
+        </tr>
+        {{/each}}
+    </table>
+</script>
+
+<script src="01.CoursesTable.js"></script>
+</body>
+</html>

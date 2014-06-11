@@ -1,0 +1,26 @@
+table {
+    border-collapse: collapse;
+    font-weight: bold;
+    font-family: Arial;
+}
+
+table, tr, td, th {
+    border: 1px solid black;
+}
+
+th {
+    background-color: #A6A6A6;
+    color: white;
+}
+
+td {
+    padding: 3px;
+}
+
+td.course-number {
+    text-align: center;
+}
+
+tr:nth-child(odd) {
+    background-color: #D9D9D9;
+}
