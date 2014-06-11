@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="container">You can select on number from 1 to 5</div>
+<script src="handlebars-v1.3.0.js"></script>
+
+<script type="text/x-handlebars-template" id="post-template">
+    <select>
+        {{#each items}}
+        <option value="{{value}}">{{text}}</option>
+        {{/each}}
+    </select>
+</script>
+
+<script>
+    var items = [
+        {
+            value: 1,
+            text: 'One'
+        },
+        {
+            value: 2,
+            text: 'Two'
+        },
+        {
+            value: 3,
+            text: 'Three'
+        },
+        {
+            value: 4,
+            text: 'Four'
+        },
+        {
+            value: 5,
+            text: 'Five'
+        }
+    ];
+
+    var templateSource = document.getElementById('post-template').innerHTML;
+    var template = Handlebars.compile(templateSource);
+
+    var selectOptionsHtml = template({items: items});
+
+    var container = document.getElementById('container');
+    container.innerHTML += selectOptionsHtml;
+</script>
+</body>
+</html>
