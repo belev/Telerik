@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    (function () {
+        function createDiv() {
+            var newDiv = document.createElement('div');
+
+            newDiv.style.width = getRandomInt(20, 100) + "px";
+            newDiv.style.height = getRandomInt(20, 100) + "px";
+
+            newDiv.style.backgroundColor = getRandomColor();
+            newDiv.style.color = getRandomColor();
+
+            newDiv.style.textAlign = "center";
+
+            newDiv.style.position = "absolute";
+            newDiv.style.top = getRandomInt(0, window.innerHeight - 1) + "px";
+            newDiv.style.left = getRandomInt(0, window.innerWidth - 1) + "px";
+
+            newDiv.style.borderRadius = getRandomInt(1, 15) + "px";
+            newDiv.style.borderColor = getRandomColor();
+            newDiv.style.borderWidth = getRandomColor(1, 20) + "px";
+
+            newDiv.appendChild(createStrongText("div"));
+
+            return newDiv;
+        }
+
+        function getRandomInt(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        function getRandomColor() {
+            return "rgb(" +
+                    getRandomInt(0, 255) + "," +
+                    getRandomInt(0, 255) + "," +
+                    getRandomInt(0, 255) + ")";
+        }
+
+        function createStrongText(text) {
+            var strongText = document.createElement("strong");
+            var textNode = document.createTextNode(text);
+            strongText.appendChild(textNode);
+
+            return strongText;
+        }
+
+        var divsFragment = document.createDocumentFragment();
+        var divsCount = getRandomInt(2, 20), i;
+
+        for (var i = 0; i < divsCount; i++) {
+            divsFragment.appendChild(createDiv());
+        }
+
+        document.body.appendChild(divsFragment);
+    }());
+</script>
+</body>
+</html>
