@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #message-box {
+            border: 1px solid purple;
+            width: 350px;
+            height: 150px;
+        }
+
+        #message-box-heading {
+            padding-left: 85px;
+        }
+
+        .message-box-btns {
+            margin-left: 16px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+<div id="message-box">
+    <h1 id="message-box-heading">Message box</h1>
+
+    <button id="success-btn" class="message-box-btns">Show success message</button>
+    <button id="error-btn" class="message-box-btns">Show error message</button>
+
+    <div id="message-box-result"></div>
+</div>
+<script src="jquery-1.11.1.min.js"></script>
+<script src="02.MessageBox.js"></script>
+</body>
+</html>
