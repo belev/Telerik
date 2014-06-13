@@ -1,7 +1,6 @@
 (function ($) {
     $.fn.messageBox = function () {
         var $this = $(this);
-        console.log($this);
 
         function showMessage(message, backgroundColor) {
             var $result = $('#message-box-result');
