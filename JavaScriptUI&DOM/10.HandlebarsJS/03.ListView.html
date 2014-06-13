@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        table {
+            border-collapse: collapse;
+            font-weight: bold;
+            font-family: Arial;
+        }
+
+        table, tr, td, th {
+            border: 1px solid black;
+        }
+
+        th {
+            background-color: #A6A6A6;
+            color: white;
+        }
+
+        td {
+            padding: 3px;
+        }
+
+        tr:nth-child(odd) {
+            background-color: #D9D9D9;
+        }
+
+        #div-students-table {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<div id="wrapper">
+    <ul id="books-list" data-template="book-item-template"></ul>
+
+    <table id="students-table">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Mark</th>
+        </tr>
+        </thead>
+        <tbody id="students-table-body" data-template="students-row-template"></tbody>
+    </table>
+
+    <div id="div-students-table"></div>
+</div>
+
+<script src="jquery-1.11.1.min.js"></script>
+<script src="handlebars-v1.3.0.js"></script>
+
+<script id="book-item-template" type="text/x-handlebars-template">
+    {{#each books}}
+    <li class="book-item">
+        <a href="/#books/{{id}}">
+            <strong>{{title}}</strong>
+        </a>
+    </li>
+    {{/each}}
+</script>
+
+<script id="students-row-template" type="text/x-handlebars-template">
+    {{#each students}}
+    <tr class="student-row">
+        <td>{{@index}}</td>
+        <td>{{name}}</td>
+        <td>{{mark}}</td>
+    </tr>
+    {{/each}}
+</script>
+
+<script id="students-table-template" type="text/x-handlebars-template">
+    <table>
+        <thead>
+        <tr>
+            <th>#</td>
+            <th>Name</td>
+            <th>Mark</td>
+        </tr>
+        </thead>
+
+        <tbody>
+        {{#each students}}
+        <tr>
+            <td>{{@index}}</td>
+            <td>{{name}}</td>
+            <td>{{mark}}</td>
+        </tr>
+        {{/each}}
+        </tbody>
+    </table>
+</script>
+
+<script src="03.ListView.js"></script>
+</body>
+</html>
