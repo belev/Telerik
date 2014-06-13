@@ -36,18 +36,21 @@
 <div id="wrapper">
     <ul id="books-list" data-template="book-item-template"></ul>
 
-    <table id="students-table">
-        <thead>
-        <tr>
-            <th>#</th>
-            <th>Name</th>
-            <th>Mark</th>
-        </tr>
-        </thead>
-        <tbody id="students-table-body" data-template="students-row-template"></tbody>
-    </table>
+    <div id="students-table-wrapper">
+        Generated only students rows from template
+        <table id="students-table">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Mark</th>
+            </tr>
+            </thead>
+            <tbody id="students-table-body" data-template="students-row-template"></tbody>
+        </table>
+    </div>
 
-    <div id="div-students-table"></div>
+    <div id="div-students-table">Generated whole table from template</div>
 </div>
 
 <script src="jquery-1.11.1.min.js"></script>
