@@ -1,0 +1,17 @@
+{
+  "name": "SuperMario",
+  "version": "0.0.1",
+  "homepage": "https://github.com/dnmitev/JS-UI-DOM",
+  "authors": [
+    "Dimitar Mitev <dnmitev@gmail.com>"
+  ],
+  "description": "svg/canvas animation",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
