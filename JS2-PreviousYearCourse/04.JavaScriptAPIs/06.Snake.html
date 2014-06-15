@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body {
+            background-color: black;
+        }
+
+        canvas {
+            border: 1px solid red;
+            margin-top: 40px;
+            margin-left: 40px;
+        }
+
+        h1 {
+            color: red;
+            margin-left: 290px;
+        }
+    </style>
+</head>
+<body onload="snake()">
+<h1> Snake </h1>
+<canvas id="canvas-field" width="600px" height="450px"></canvas>
+<script src="03.Snake.GameEngine.js"></script>
+<script src="03.Snake.CollisionDetector.js"></script>
+<script src="03.Snake.js"></script>
+</body>
+</html>
