@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="04.TreeView.js"></script>
+</head>
+<body>
+<h1> Tree view </h1>
+<div class="tree-view"></div>
+<script>
+    // test the module
+    var treeView = treeViewControls.treeView("div.tree-view");
+    var jsnode = treeView.addNode();
+    jsnode.content("JavaScript");
+
+    var js1subnode = jsnode.addNode();
+    js1subnode.content("JavaScript - part 1");
+
+    var js2subnode = jsnode.addNode();
+    js2subnode.content("JavaScript - part 2");
+
+    var jslibssubnode = jsnode.addNode();
+    jslibssubnode.content("JS Libraries");
+
+    var jsLibsSubsubNode1 = jslibssubnode.addNode();
+    jsLibsSubsubNode1.content("JQuery");
+
+    var jsLibsSubsubNode2 = jslibssubnode.addNode();
+    jsLibsSubsubNode2.content("AngularJS");
+
+    var jsframeworksnode = jsnode.addNode();
+    jsframeworksnode.content("JS Frameworks and UI");
+
+    var webnode = treeView.addNode();
+    webnode.content("Web");
+
+    addHandlers();
+</script>
+</body>
+</html>
