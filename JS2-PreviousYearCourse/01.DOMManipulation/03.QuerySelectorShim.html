@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Query Selector</title>
+    <script src="Sizzle/jquery-sizzle-20fbadb/src/sizzle.js"></script>
+    <script>
+        function onClick() {
+            var selector = document.getElementById("selector").value;
+            var elements = Sizzle(selector);
+
+            var wrapper = document.getElementById("wrapper");
+            var fragment = document.createDocumentFragment();
+            var result;
+
+            for (var i = 0; i < elements.length; i++) {
+                result = document.createElement("div");
+                result.innerHTML += "Tag name: " + elements[i].tagName + " Class: " + elements[i].className + " ID: " + elements[i].id;
+                fragment.appendChild(result);
+            }
+
+            wrapper.appendChild(fragment);
+        }
+    </script>
+</head>
+<body>
+<div id="wrapper">
+    <input type="text" id="selector"/>
+    <a href="#" onclick="onClick()">Click me!</a>
+
+    <div class="testOne" id="testTwo">
+        Enter query selector in text field and result will follow.
+    </div>
+    <div class="testOne"></div>
+    
+    <section id="articles" style="display: none">
+        <article>
+            <h1> Heading </h1>
+            <p id="textParagraph" class="textParagraph">
+                Some text here to test
+            </p>
+        </article>
+    </section>
+</div>
+</body>
+</html>
