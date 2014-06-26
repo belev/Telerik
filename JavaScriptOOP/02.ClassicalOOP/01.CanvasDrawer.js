@@ -34,12 +34,7 @@ var CanvasDrawer = function (selector) {
         ctx.lineTo(toPosition.x, toPosition.y);
         ctx.stroke();
     }
-
-    function Position(x, y) {
-        this.x = x;
-        this.y = y;
-    }
-
+	
     return {
         drawRect: drawRect,
         drawCircle: drawCircle,
