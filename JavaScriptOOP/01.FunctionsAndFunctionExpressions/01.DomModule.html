@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="01.DomModule.js"></script>
+</head>
+<body>
+<div id="wrapper">
+    <div id="main-nav">
+        <ul>
+            <li><a href="#" class="button">First button</a></li>
+            <li><a href="#" class="button">Second button</a></li>
+            <li><a href="#" class="button">Third button</a></li>
+            <li><a href="#" class="button">Fourth button</a></li>
+            <li><a href="#" class="button">Fifth button</a></li>
+        </ul>
+    </div>
+</div>
+<script>
+    var div = document.createElement("div");
+    div.className = 'container';
+    div.innerHTML = "added div";
+
+    //appends div to #wrapper
+    domModule.addChild(div, "#wrapper");
+
+    //removes li:first-child from ul
+    domModule.removeElement("ul", "li:first-child");
+
+    //add handler to each a element with class button
+    domModule.attachEvent("a.button", 'click',
+            function () {
+                alert("Clicked")
+            });
+
+    for (var i = 0; i < 160; i++) {
+        var divItem = div.cloneNode(true);
+        divItem.innerHTML = "appended div number:" + (i + 1);
+        domModule.addElementToBuffer("div.container", divItem);
+    }
+</script>
+</body>
+</html>

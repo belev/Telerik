@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<canvas id="canvas" width="500" height="500"></canvas>
+<script src="01.CanvasDrawer.js"></script>
+<script>
+    var drawer = new CanvasDrawer('#canvas');
+
+    drawer.drawRect({x: 100, y: 150}, 50, 50);
+    drawer.drawCircle({x: 125, y: 130}, 20);
+    drawer.drawLine({x: 150, y: 150}, {x: 280, y: 390});
+</script>
+</body>
+</html>
