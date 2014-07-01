@@ -9,7 +9,7 @@ define(['./item'], function (Item) {
             }
 
             this.title = title;
-            this.items = [];
+            this._items = [];
         }
 
         Section.prototype.add = function (item) {
@@ -17,17 +17,17 @@ define(['./item'], function (Item) {
                 throw new Error('Can not add undefined item to section.');
             }
 
-            if(!(item instanceof Item)) {
+            if (!(item instanceof Item)) {
                 throw new Error('Section should consist only items.');
             }
 
-            this.items.push(item);
+            this._items.push(item);
         };
 
         Section.prototype.getData = function () {
             return {
                 title: this.title,
-                items: this.items
+                items: this._items
             };
         };
         return Section;

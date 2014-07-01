@@ -3,7 +3,7 @@ define(['./section'] ,function (Section) {
     var Container;
     Container = (function () {
         function Container() {
-            this.sections = [];
+            this._sections = [];
         }
 
         Container.prototype.add = function (section) {
@@ -15,11 +15,11 @@ define(['./section'] ,function (Section) {
                 throw new Error('Section should consist only items.');
             }
 
-            this.sections.push(section);
+            this._sections.push(section);
         };
 
         Container.prototype.getData = function () {
-            return this.sections;
+            return this._sections;
         };
 
         return Container;
