@@ -19,12 +19,7 @@ define(['./section'] ,function (Section) {
         };
 
         Container.prototype.getData = function () {
-            var result = [];
-            for (var i in this.sections) {
-                result.push(this.sections[i]);
-            }
-
-            return result;
+            return this.sections;
         };
 
         return Container;
