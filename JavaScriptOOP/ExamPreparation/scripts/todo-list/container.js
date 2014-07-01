@@ -1,4 +1,4 @@
-define(function () {
+define(['./section'] ,function (Section) {
     'use strict';
     var Container;
     Container = (function () {
@@ -9,6 +9,10 @@ define(function () {
         Container.prototype.add = function (section) {
             if (!section) {
                 throw new Error('Can not add undefined section to container.');
+            }
+
+            if(!(section instanceof Section)) {
+                throw new Error('Section should consist only items.');
             }
 
             this.sections.push(section);

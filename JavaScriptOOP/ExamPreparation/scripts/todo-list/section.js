@@ -1,5 +1,6 @@
-define(function () {
+define(['./item'], function (Item) {
     'use strict';
+
     var Section;
     Section = (function () {
         function Section(title) {
@@ -16,6 +17,10 @@ define(function () {
                 throw new Error('Can not add undefined item to section.');
             }
 
+            if(!(item instanceof Item)) {
+                throw new Error('Section should consist only items.');
+            }
+
             this.items.push(item);
         };
 
@@ -25,7 +30,6 @@ define(function () {
                 items: this.items
             };
         };
-
         return Section;
     }());
 
