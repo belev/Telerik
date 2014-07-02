@@ -1,19 +1,19 @@
 ﻿/// <reference path="libs/require.js" />
-/// <reference path="libs/mustache.js" />
+/// <reference path="libs/handlebars.js" />
 /// <reference path="app/controls.js" />
 /// <reference path="app/data.js" />
 require.config({
     paths: {
         jquery: "libs/jquery-2.0.3",
-        mustache: "libs/mustache",
+        handlebars: "libs/handlebars",
         data: "app/data",
         controls: "app/controls"
     }
 });
 
-require(["jquery", "mustache", "data", "controls"], function ($, mustache, data, controls) {
+require(["jquery", "handlebars", "data", "controls"], function ($, handlebars, data, controls) {
     var personTemplateString = $("#student-template").html();
-    var template = mustache.compile(personTemplateString);
+    var template = Handlebars.compile(personTemplateString);
     var comboBoxView = controls.ComboBox(data.getPeople());
 
     var ComboBoxHtml = comboBoxView.render(template);
