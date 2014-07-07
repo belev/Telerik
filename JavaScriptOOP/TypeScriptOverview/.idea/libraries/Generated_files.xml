@@ -1,0 +1,93 @@
+<component name="libraryTable">
+  <library name="Generated files" type="javaScript">
+    <properties>
+      <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/01. Vehicles/app.js" />
+        <item url="file://$PROJECT_DIR$/01. Vehicles/Vehicles/AmphibiousVehicle.js" />
+        <item url="file://$PROJECT_DIR$/01. Vehicles/PropulsionUnits/PropellingNozzle.js" />
+        <item url="file://$PROJECT_DIR$/01. Vehicles/PropulsionUnits/PropulsionUnit.js" />
+        <item url="file://$PROJECT_DIR$/01. Vehicles/Interfaces/PropulsionUnits.Interfaces.js" />
+        <item url="file://$PROJECT_DIR$/01. Vehicles/PropulsionUnits/Propeller.js" />
+        <item url="file://$PROJECT_DIR$/01. Vehicles/Helper/Utility.js" />
+        <item url="file://$PROJECT_DIR$/01. Vehicles/Vehicles/LandVehicle.js" />
+        <item url="file://$PROJECT_DIR$/01. Vehicles/PropulsionUnits/Wheel.js" />
+        <item url="file://$PROJECT_DIR$/01. Vehicles/PropulsionUnits/AfterBurnerSwitch.js" />
+        <item url="file://$PROJECT_DIR$/01. Vehicles/Vehicles/Vehicle.js" />
+        <item url="file://$PROJECT_DIR$/01. Vehicles/Interfaces/Vehicles.Interfaces.js" />
+        <item url="file://$PROJECT_DIR$/01. Vehicles/Vehicles/AirVehicle.js" />
+        <item url="file://$PROJECT_DIR$/01. Vehicles/Vehicles/WaterVehicle.js" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/Vehicles/PropulsionUnits/Propeller.js" />
+      <root url="file://$PROJECT_DIR$/Vehicles/Vehicles/LandVehicle.js" />
+      <root url="file://$PROJECT_DIR$/Vehicles/PropulsionUnits/PropulsionUnit.js" />
+      <root url="file://$PROJECT_DIR$/Vehicles/Vehicles/AirVehicle.js" />
+      <root url="file://$PROJECT_DIR$/Vehicles/PropulsionUnits/PropellingNozzle.js" />
+      <root url="file://$PROJECT_DIR$/Vehicles/Vehicles/WaterVehicle.js" />
+      <root url="file://$PROJECT_DIR$/Vehicles/Interfaces/PropulsionUnits.Interfaces.js" />
+      <root url="file://$PROJECT_DIR$/Vehicles/Vehicles/AmphibiousVehicle.js" />
+      <root url="file://$PROJECT_DIR$/Vehicles/Interfaces/Vehicles.Interfaces.js" />
+      <root url="file://$PROJECT_DIR$/Vehicles/app.js" />
+      <root url="file://$PROJECT_DIR$/Vehicles/PropulsionUnits/AfterBurnerSwitch.js" />
+      <root url="file://$PROJECT_DIR$/Vehicles/Vehicles/Vehicle.js" />
+      <root url="file://$PROJECT_DIR$/Vehicles/PropulsionUnits/Wheel.js" />
+      <root url="file://$PROJECT_DIR$/Vehicles/Vehicles/LandVehicle.js" />
+      <root url="file://$PROJECT_DIR$/Vehicles/PropulsionUnits/Propeller.js" />
+      <root url="file://$PROJECT_DIR$/Vehicles/PropulsionUnits/PropulsionUnit.js" />
+      <root url="file://$PROJECT_DIR$/Vehicles/PropulsionUnits/PropellingNozzle.js" />
+      <root url="file://$PROJECT_DIR$/Vehicles/Vehicles/AirVehicle.js" />
+      <root url="file://$PROJECT_DIR$/Vehicles/Vehicles/WaterVehicle.js" />
+      <root url="file://$PROJECT_DIR$/Vehicles/Interfaces/PropulsionUnits.Interfaces.js" />
+      <root url="file://$PROJECT_DIR$/Vehicles/Vehicles/AmphibiousVehicle.js" />
+      <root url="file://$PROJECT_DIR$/Vehicles/Interfaces/Vehicles.Interfaces.js" />
+      <root url="file://$PROJECT_DIR$/Vehicles/app.js" />
+      <root url="file://$PROJECT_DIR$/Vehicles/PropulsionUnits/AfterBurnerSwitch.js" />
+      <root url="file://$PROJECT_DIR$/Vehicles/Vehicles/Vehicle.js" />
+      <root url="file://$PROJECT_DIR$/Vehicles/PropulsionUnits/Wheel.js" />
+      <root url="file://$PROJECT_DIR$/01.Vehicles/app.js" />
+      <root url="file://$PROJECT_DIR$/01.Vehicles/PropulsionUnits/AfterBurnerSwitch.js" />
+      <root url="file://$PROJECT_DIR$/01.Vehicles/PropulsionUnits/Wheel.js" />
+      <root url="file://$PROJECT_DIR$/01.Vehicles/Vehicles/WaterVehicle.js" />
+      <root url="file://$PROJECT_DIR$/01.Vehicles/Interfaces/Vehicles.Interfaces.js" />
+      <root url="file://$PROJECT_DIR$/01.Vehicles/Vehicles/Vehicle.js" />
+      <root url="file://$PROJECT_DIR$/01.Vehicles/Helper/Utility.js" />
+      <root url="file://$PROJECT_DIR$/01.Vehicles/PropulsionUnits/PropellingNozzle.js" />
+      <root url="file://$PROJECT_DIR$/01.Vehicles/PropulsionUnits/PropulsionUnit.js" />
+      <root url="file://$PROJECT_DIR$/01.Vehicles/PropulsionUnits/Propeller.js" />
+      <root url="file://$PROJECT_DIR$/01.Vehicles/Vehicles/AirVehicle.js" />
+      <root url="file://$PROJECT_DIR$/01.Vehicles/Vehicles/LandVehicle.js" />
+      <root url="file://$PROJECT_DIR$/01.Vehicles/Interfaces/PropulsionUnits.Interfaces.js" />
+      <root url="file://$PROJECT_DIR$/01.Vehicles/Vehicles/AmphibiousVehicle.js" />
+      <root url="file://$PROJECT_DIR$/01.Vehicles/app.js" />
+      <root url="file://$PROJECT_DIR$/01.Vehicles/PropulsionUnits/AfterBurnerSwitch.js" />
+      <root url="file://$PROJECT_DIR$/01.Vehicles/Vehicles/WaterVehicle.js" />
+      <root url="file://$PROJECT_DIR$/01.Vehicles/PropulsionUnits/Wheel.js" />
+      <root url="file://$PROJECT_DIR$/01.Vehicles/Interfaces/Vehicles.Interfaces.js" />
+      <root url="file://$PROJECT_DIR$/01.Vehicles/Vehicles/Vehicle.js" />
+      <root url="file://$PROJECT_DIR$/01.Vehicles/Helper/Utility.js" />
+      <root url="file://$PROJECT_DIR$/01.Vehicles/PropulsionUnits/PropellingNozzle.js" />
+      <root url="file://$PROJECT_DIR$/01.Vehicles/PropulsionUnits/PropulsionUnit.js" />
+      <root url="file://$PROJECT_DIR$/01.Vehicles/PropulsionUnits/Propeller.js" />
+      <root url="file://$PROJECT_DIR$/01.Vehicles/Vehicles/AirVehicle.js" />
+      <root url="file://$PROJECT_DIR$/01.Vehicles/Vehicles/LandVehicle.js" />
+      <root url="file://$PROJECT_DIR$/01.Vehicles/Interfaces/PropulsionUnits.Interfaces.js" />
+      <root url="file://$PROJECT_DIR$/01.Vehicles/Vehicles/AmphibiousVehicle.js" />
+      <root url="file://$PROJECT_DIR$/01. Vehicles/Vehicles/AmphibiousVehicle.js" />
+      <root url="file://$PROJECT_DIR$/01. Vehicles/app.js" />
+      <root url="file://$PROJECT_DIR$/01. Vehicles/PropulsionUnits/PropellingNozzle.js" />
+      <root url="file://$PROJECT_DIR$/01. Vehicles/PropulsionUnits/PropulsionUnit.js" />
+      <root url="file://$PROJECT_DIR$/01. Vehicles/PropulsionUnits/Propeller.js" />
+      <root url="file://$PROJECT_DIR$/01. Vehicles/Interfaces/PropulsionUnits.Interfaces.js" />
+      <root url="file://$PROJECT_DIR$/01. Vehicles/Helper/Utility.js" />
+      <root url="file://$PROJECT_DIR$/01. Vehicles/PropulsionUnits/Wheel.js" />
+      <root url="file://$PROJECT_DIR$/01. Vehicles/Vehicles/LandVehicle.js" />
+      <root url="file://$PROJECT_DIR$/01. Vehicles/PropulsionUnits/AfterBurnerSwitch.js" />
+      <root url="file://$PROJECT_DIR$/01. Vehicles/Vehicles/Vehicle.js" />
+      <root url="file://$PROJECT_DIR$/01. Vehicles/Interfaces/Vehicles.Interfaces.js" />
+      <root url="file://$PROJECT_DIR$/01. Vehicles/Vehicles/AirVehicle.js" />
+      <root url="file://$PROJECT_DIR$/01. Vehicles/Vehicles/WaterVehicle.js" />
+    </CLASSES>
+    <SOURCES />
+  </library>
+</component>
