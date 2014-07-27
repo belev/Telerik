@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="wrapper">
+    <div id="requests-container">
+        <div id="get-request-result"></div>
+        <button id="get-request-button"> Make get request</button>
+
+        <div id="make-post-request-result"></div>
+        <button id="post-request-button"> Make post request</button>
+    </div>
+
+    <div id="post-request-container">
+        <label for="first-name">First name: </label>
+        <input type="text" id="first-name" required="required">
+
+        <label for="last-name">Last name: </label>
+        <input type="text" id="last-name" required="required">
+
+        <label for="age">Age: </label>
+        <input type="text" id="age" required="required">
+
+        <button id="post-button">Make post request</button>
+    </div>
+</div>
+<script src="node_modules/jquery/dist/cdn/jquery-2.1.1.min.js"></script>
+<script src="node_modules/q/q.js"></script>
+<script src="01.http-request.js"></script>
+
+<script>
+    (function () {
+        $('#post-request-container').hide();
+
+        $('#get-request-button').on('click', function () {
+            HttpRequester.getJSON('01.data.json', {test: 'testingHeader', anotherTest: 'anotherTestingHeader'})
+                    .then(function (data) {
+                        $('#get-request-result').html(JSON.stringify(data));
+                    }, function (err) {
+                        $('#get-request-result').html(err);
+                    });
+        });
+
+        $('#post-request-button').on('click', function () {
+            $('#requests-container').hide();
+            $('#post-request-container').show();
+        });
+
+        $('#post-button').on('click', function () {
+            var firstName = $('#first-name').val();
+            var lastName = $('#last-name').val();
+            var age = $('#age').val();
+
+            var dataToPost = {
+                firstName: firstName,
+                lastName: lastName,
+                age: age
+            };
+
+            HttpRequester.postJSON('01.http-request.html', null, dataToPost)
+                    .then(function () {
+                        var post = $('<div />').html(JSON.stringify(dataToPost));
+                        $('#make-post-request-result').append(post);
+
+                        $('#requests-container').show();
+                        $('#post-request-container').hide();
+                    }, function (err) {
+                        $('#make-post-request-result').html(err);
+
+                        $('#requests-container').show();
+                        $('#post-request-container').hide();
+                    });
+        });
+    }());
+</script>
+</body>
+</html>

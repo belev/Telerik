@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="wrapper">
+    <button id="get-students-button"> Get students</button>
+    <br>
+
+    <label for="student-name">Student name: </label>
+    <input type="text" id="student-name" required="required">
+    <label for="student-grade">Student grade: </label>
+    <input type="text" id="student-grade" required="required">
+    <button id="add-student-button"> Add student:</button>
+    <div id="add-student-result"></div>
+    <br>
+
+    <label for="student-id">Student id to delete:</label>
+    <input type="text" id="student-id" required="required">
+    <button id="delete-student-button"> Delete student:</button>
+    <div id="delete-student-result"></div>
+    <br>
+
+    <div id="students-get-result"></div>
+</div>
+
+<script src="../node_modules/jquery/dist/cdn/jquery-2.1.1.min.js"></script>
+<script src="../node_modules/q/q.js"></script>
+<script src="03.managing-students.js"></script>
+<script src="03.managing-students-test.js"></script>
+</body>
+</html>

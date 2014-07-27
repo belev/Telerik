@@ -1,0 +1,32 @@
+[
+    {
+        "firstName": "Pesho",
+        "lastName": "Peshov",
+        "age": "14"
+    },
+    {
+        "firstName": "Gosho",
+        "lastName": "Dragichev",
+        "age": "25"
+    },
+    {
+        "firstName": "Dragan",
+        "lastName": "Cankov",
+        "age": "50"
+    },
+    {
+        "firstName": "Mimi",
+        "lastName": "Mimcheva",
+        "age": "18"
+    },
+    {
+        "firstName": "Miro",
+        "lastName": "Galinov",
+        "age": "21"
+    },
+    {
+        "firstName": "Mariq",
+        "lastName": "Stoimenova",
+        "age": "19"
+    }
+]
