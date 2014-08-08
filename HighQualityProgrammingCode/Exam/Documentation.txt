@@ -1,0 +1,45 @@
+Design pattern: Simple Factory
+	* ManufacturerFactory class, it creates manufacturer by gine manufacturer name.
+
+Design pattern: Strategy
+	* Using strategy pattern for formatting the result of finding square number for each cpu.
+		BaseSquareNumberFinder is the used abstract class for the strategy. 
+		There are 3 classes for each cpu - 32, 64 and 128 bits. That are the strategies.
+		Here is also used and the template method pattern.
+
+Design pattern: Template Method
+	* Used with the video cards. Have an abstract class VideoCardBase which uses an abstract method DrawTextData which is implemented in the childs of VideoCardBase.
+
+Design pattern: Abstract factory
+	* Using ComputersFactory as abstract class and as child classes Hp, Dell and Lenovo manufacturers.
+
+Design pattern: Composite
+	* 
+
+Design pattern: Mediator
+	* 
+
+Found bottlenecks:
+	* In Cpu.cs where a random number is generated. Removed unnecesary loop, which is a bottleneck.
+	* When calculating the square of a number, the loop is not necessary, simply multiply the number by itself.
+
+Found bugs:
+	* Missing > in HardDriver.cs in the constructor for new Dictionary (line 29)
+	* Missing ; in HardDriver.cs in the constructor at line 41.
+	* Missing % when print battery status.
+
+Single responsibility principle
+	* Used in the whole project, every class and every method has a simple single purpose.
+
+Open/closed principle
+	* With the strategy pattern the open/closed principle is used.
+
+Liskov substitution principle
+	* In the whole project only interfaces or abstract classes are used so that the Liskov substitution principle is correct.
+		 After replacing one class with another the project won't broke.
+
+Interface segregation principle
+	* Used in the whole project, every class implements interfaces or abstract classes.
+
+Dependency inversion principle
+	* Used in Cpu for giving the square number finder logic.
