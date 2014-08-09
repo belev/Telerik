@@ -1,0 +1,6 @@
+The outer cycle will always perform n number of steps. 
+The inner cycle will always perform n - 1 number of steps because either start will increase with 1 or end will decrease with 1. 
+So on every step of the inner cycle we are 1 step closer to the end ot the cycle. 
+As we have n - 1 number of elements (from 0 to arr.Length - 1), the inner cycle will perform exactly n - 1 steps.
+So we have n steps for the outer cycle and for every step of the outer cycle we have n - 1 steps for the inner cycle.
+The total number of steps is n * ( n - 1 ) = n * n - n . Which means that the complexity is O(n * n).

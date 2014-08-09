@@ -1,0 +1,7 @@
+matrix.GetLength(0) = n
+matrix.GetLength(1) = m
+The for cycle will perform n number of steps.
+As we assume that row will be equal to zero, that means that to be true that row + 1 < matrix.GetLength(1) will be
+true every time until row reach the value of m - 1. So from 0 to m - 1 there is m times calling the recursion.
+So in conclusion the for cycle will be entered m times.
+Which means the complexity run time is O(n * m).

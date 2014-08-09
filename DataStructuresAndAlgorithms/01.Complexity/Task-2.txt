@@ -1,0 +1,8 @@
+matrix.GetLength(0) = n
+matrix.GetLength(1) = m
+In the worst case if matrix[row, 0] is always an even number, which means that we enter the inner cycle every time
+there will be n * m number of steps (n from the outer cycle and for every step in the outer cycle we perform m steps from the inner cycle).
+In the average case where matrix[row, 0] has a 50 % chance to be even number, we will enter the inner cycle n / 2 times. So the total number
+of steps in the average case is (n / 2) * m = (n * m) / 2.
+Although in both cases ( worst or average ) the complexity will be O(n * m).
+The best case is when there is only odd number on every row. Than the complexity will be linear and it gives us complexity O(n), because we will never enter the inner cycle.
