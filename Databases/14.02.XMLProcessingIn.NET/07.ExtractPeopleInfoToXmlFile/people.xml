@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<people xmlns="urn:people">
+  <person>
+    <name>Peshkata</name>
+    <address>has_no_address</address>
+    <phone>has_no_phone</phone>
+  </person>
+  <person>
+    <name>Goshkata</name>
+    <address>j.k. Lulin</address>
+    <phone>853012456</phone>
+  </person>
+  <person>
+    <name>Mariq</name>
+    <address>j.k. Krasno Selo</address>
+    <phone>0896123456</phone>
+  </person>
+  <person>
+    <name>Lusi</name>
+    <address>j.k. Belite Brezi</address>
+    <phone>0888111222</phone>
+  </person>
+</people>

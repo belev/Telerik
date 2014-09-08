@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml-stylesheet type="text/xsl" href="students.xslt"?>
+<students xmlns:students="urn:students" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <student>
+    <name>Peshkata Mishkov</name>
+    <sex>Male</sex>
+    <birthDate>1993-01-01</birthDate>
+    <phone>0876543210</phone>
+    <email>peshkata@mishkov.bg</email>
+    <course>Informatics</course>
+    <specialty>Computer Science</specialty>
+    <facultyNumber>36905</facultyNumber>
+    <exams>
+      <exam>
+        <examName>IntroProgramming</examName>
+        <tutor>P.Pavlov</tutor>
+        <score>3</score>
+      </exam>
+      <exam>
+        <examName>LinearAlgebra</examName>
+        <tutor>V.Georgiev</tutor>
+        <score>4</score>
+      </exam>
+    </exams>
+    <enrolment>
+      <date>2010-01-01</date>
+      <score>3.3</score>
+    </enrolment>
+    <teacherEndorsments>
+      <endorsment>LinearAlgebra</endorsment>
+    </teacherEndorsments>
+  </student>
+
+  <student>
+    <name>Goshkata Goshakov</name>
+    <sex>Male</sex>
+    <birthDate>1992-01-01</birthDate>
+    <phone>0898765432</phone>
+    <email>goshkata@goshakov.bg</email>
+    <course>Informatics</course>
+    <specialty>Computer Science</specialty>
+    <facultyNumber>44444</facultyNumber>
+    <exams>
+      <exam>
+        <examName>AnalyticGeometry</examName>
+        <tutor>P.Jivkov</tutor>
+        <score>4</score>
+      </exam>
+      <exam>
+        <examName>HTML/CSS</examName>
+        <tutor>Pavlinka Pavlinova</tutor>
+        <score>6</score>
+      </exam>
+    </exams>
+    <enrolment>
+      <date>2009-01-01</date>
+      <score>6</score>
+    </enrolment>
+    <teacherEndorsments>
+      <endorsment>HTML/CSS</endorsment>
+    </teacherEndorsments>
+  </student>
+
+  <student>
+    <name>Mimi Dimitrova</name>
+    <sex>Female</sex>
+    <birthDate>1994-02-02</birthDate>
+    <phone>0888123456</phone>
+    <email>mimi@dimitrova.bg</email>
+    <course>Informatics</course>
+    <specialty>Computer Science</specialty>
+    <facultyNumber>41963</facultyNumber>
+    <exams>
+      <exam>
+        <examName>IntroProgramming</examName>
+        <tutor>P.Pavlov</tutor>
+        <score>6</score>
+      </exam>
+      <exam>
+        <examName>HTML/CSS</examName>
+        <tutor>Pavlinka Pavlinova</tutor>
+        <score>6</score>
+      </exam>
+      <exam>
+        <examName>DescreteMathematics</examName>
+        <tutor>A.Angelov</tutor>
+        <score>6</score>
+      </exam>
+    </exams>
+    <enrolment>
+      <date>20011-01-01</date>
+      <score>6</score>
+    </enrolment>
+    <teacherEndorsments>
+      <endorsment>IntroProgramming</endorsment>
+      <endorsment>HTML/CSS</endorsment>
+      <endorsment>DescreteMathematics</endorsment>
+    </teacherEndorsments>
+  </student>
+</students>
